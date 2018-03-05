@@ -1,0 +1,164 @@
+﻿<!--<!DOCTYPE html>
+<html>
+<head>
+    <base href="http://demos.telerik.com/kendo-ui/bar-charts/remote-data-binding">
+    <style>
+        html {
+            font-size: 100px;
+            font-family: Arial, Helvetica, sans-serif;
+        }
+
+        .rightGrid {
+            width: 45%;
+            float: right;
+            height: 450px;
+            margin-top: -20";
+        }
+
+        .leftGrid {
+            width: 45%;
+            float: left;
+            height: 450px;
+            margin-top: -20";
+        }
+
+        .Grid {
+            height: 300px;
+        }
+
+
+    </style>
+    <title></title>
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.914/styles/kendo.common-material.min.css" />
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.min.css" />
+    <link rel="stylesheet" href="//kendo.cdn.telerik.com/2016.3.914/styles/kendo.material.mobile.min.css" />
+
+    <script src="//kendo.cdn.telerik.com/2016.3.914/js/jquery.min.js"></script>
+    <script src="//kendo.cdn.telerik.com/2016.3.914/js/kendo.all.min.js"></script>
+</head>
+<body>
+    <div class="col-xs-12">
+    </div>-->
+
+<style>
+    html {
+        font-size: 100px;
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .rightGrid {
+        width: 45%;
+        float: right;
+        /*height: 450px;
+        margin-top: -20";*/
+    }
+
+    .leftGrid {
+        width: 45%;
+        float: left;
+        /*height: 450px;
+        margin-top: -20";*/
+    }
+
+    .Grid {
+        /*height: 300px;*/
+    }
+</style>
+
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <section class="form-group col-xs-12 borderBottomLight">
+        <div>
+            <div id="chartOpenClaims" class="leftGrid"></div>
+        </div>
+        <div>
+            <div id="chartAverageDaysOpen" class="rightGrid"></div>
+        </div>
+    </section>
+    <section class="form-group col-xs-12 borderBottomLight">
+        <section class="form-group col-xs-6 text-left">
+            <h1 class="PageHeader1 paddingBottom10">Tasks Assigned To Me</h1> <br />
+            <div kendo-grid="tasksAssignedToMeGrid" id="tasksAssignedToMeGrid" options="tasksAssignedToMeGridOptions" class="Grid">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+        <section class="form-group col-xs-6 text-left">
+            <h1 style="width: 45%;" class="PageHeader1 paddingBottom10">Due Today</h1>
+            <div kendo-grid="dueTodayGrid" id="dueTodayGrid" options="dueTodayGridOptions">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+    </section>
+    <section class="form-group col-xs-12 borderBottomLight">
+        <section class="form-group col-xs-6 text-left">
+            <h1 class="PageHeader1 paddingBottom10">Tasks Assigned By Me</h1>
+            <div kendo-grid="tasksAssignedByMeGrid" id="tasksAssignedByMeGrid" options="tasksAssignedByMeGridOptions" class="Grid">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+        <section class="form-group col-xs-6 text-left">
+            <h1 class="PageHeader1 paddingBottom10">Due in 7 days</h1>
+            <div kendo-grid="due7daysGrid" id="due7daysGrid" options="due7daysGridOptions" class="Grid">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+    </section>
+    <section class="form-group col-xs-12 borderBottomLight">
+        <section class="form-group col-xs-6 text-left">
+            <h1 class="PageHeader1 paddingBottom10">Overdue Tasks</h1>
+            <div kendo-grid="overdueTasksGrid" id="overdueTasksGrid" options="overdueTasksGridOptions" class="Grid">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+        <section class="form-group col-xs-6 text-left">
+            <h1 class="PageHeader1 paddingBottom10">Overdue Claims</h1>
+            <div kendo-grid="overdueClaimsGrid" id="overdueClaimsGrid" options="overdueClaimsGridOptions" class="Grid">
+            </div>
+            <br />
+            <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+                {{ message }}
+            </div>
+        </section>
+        <section class="form-group col-xs-12 text-left">
+            <h1 class="PageHeader1 paddingBottom10">System Alerts</h1>
+            <div id="systemAlerts">
+                <!--<div data-bind="text: Id"></div>-->
+                <div data-role="listview" data-template="display-associative-many" data-bind="source: Associative"></div>
+            </div>
+
+            <script type="text/x-kendo-template" id="display-associative-many">
+                <div>
+                    <table class="form-group col-xs-12 text-left" border="1">
+                        <tr class="form-group col-xs-10 text-left" style="margin-top:10px; border-color:white;">
+                            <td class="col-xs-5 systemAlertCustomClass"> ${ data.title }</td>
+                            <td class="col-xs-5">${ data.alertBy }</td>
+                        </tr>
+                        <tr class="form-group col-xs-12 text-left" style="border-color: white;">
+                            <td class="col-xs-12"> ${ data.description }</td>
+                        </tr>
+                    </table>
+                </div>
+            </script>
+        </section>
+    </section>
+
+</section>
+
+
+<!--</body>
+</html>-->

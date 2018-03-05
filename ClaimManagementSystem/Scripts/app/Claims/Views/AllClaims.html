@@ -1,0 +1,13 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage Claims</h1>
+    <a href="#/newClaim" class="k-button pull-right">Create New Claim</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="claimsGrid" id="claimsGrid" options="claimsGridOptions">
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

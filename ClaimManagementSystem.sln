@@ -1,0 +1,113 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClaimManagementSystem", "ClaimManagementSystem\ClaimManagementSystem.csproj", "{ACE05C96-093B-455A-AA0D-A026B76A4853}"
+	ProjectSection(ProjectDependencies) = postProject
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E} = {A322A261-139A-4EE0-A566-22FBFECC4F1E}
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE} = {158045BE-5F43-4356-8FEC-973AA7D07FAE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Tests", "ClaimManagementSystem.Tests\CMS.Tests.csproj", "{A3CB5922-F58C-4BDD-934A-3C1E3C3A231D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Entity", "CMS.Entity\CMS.Entity.csproj", "{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Repository", "CMS.Repository\CMS.Repository.csproj", "{7F0D195E-3E9A-41E5-98AA-254204F009A8}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD} = {9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE} = {158045BE-5F43-4356-8FEC-973AA7D07FAE}
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.Utilities", "CMS.Utilities\CMS.Utilities.csproj", "{158045BE-5F43-4356-8FEC-973AA7D07FAE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CMS.BusinessLibrary", "CMS.BusinessLibrary\CMS.BusinessLibrary.csproj", "{A322A261-139A-4EE0-A566-22FBFECC4F1E}"
+	ProjectSection(ProjectDependencies) = postProject
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD} = {9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE} = {158045BE-5F43-4356-8FEC-973AA7D07FAE}
+	EndProjectSection
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "CMSDataBase", "CMSDataBase\CMSDataBase.sqlproj", "{E6CD5B96-3AB8-41E1-B15E-1C63BF86E806}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = ".nuget", ".nuget", "{359E0437-2238-4902-9006-01491F2C0F47}"
+	ProjectSection(SolutionItems) = preProject
+		.nuget\NuGet.Config = .nuget\NuGet.Config
+		.nuget\NuGet.exe = .nuget\NuGet.exe
+		.nuget\NuGet.targets = .nuget\NuGet.targets
+	EndProjectSection
+EndProject
+Global
+	GlobalSection(TeamFoundationVersionControl) = preSolution
+		SccNumberOfProjects = 8
+		SccEnterpriseProvider = {4CA58AB2-18FA-4F8D-95D4-32DDF27D184C}
+		SccTeamFoundationServer = https://madhusudhakar.visualstudio.com/
+		SccLocalPath0 = .
+		SccProjectUniqueName1 = ClaimManagementSystem.Tests\\CMS.Tests.csproj
+		SccProjectName1 = ClaimManagementSystem.Tests
+		SccLocalPath1 = ClaimManagementSystem.Tests
+		SccProjectUniqueName2 = ClaimManagementSystem\\ClaimManagementSystem.csproj
+		SccProjectName2 = ClaimManagementSystem
+		SccLocalPath2 = ClaimManagementSystem
+		SccProjectUniqueName3 = CMS.BusinessLibrary\\CMS.BusinessLibrary.csproj
+		SccProjectName3 = CMS.BusinessLibrary
+		SccLocalPath3 = CMS.BusinessLibrary
+		SccProjectUniqueName4 = CMS.Entity\\CMS.Entity.csproj
+		SccProjectName4 = CMS.Entity
+		SccLocalPath4 = CMS.Entity
+		SccProjectUniqueName5 = CMS.Repository\\CMS.Repository.csproj
+		SccProjectName5 = CMS.Repository
+		SccLocalPath5 = CMS.Repository
+		SccProjectUniqueName6 = CMS.Utilities\\CMS.Utilities.csproj
+		SccProjectName6 = CMS.Utilities
+		SccLocalPath6 = CMS.Utilities
+		SccProjectUniqueName7 = CMSDataBase\\CMSDataBase.sqlproj
+		SccProjectName7 = CMSDataBase
+		SccLocalPath7 = CMSDataBase
+	EndGlobalSection
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug - Mayank|Any CPU = Debug - Mayank|Any CPU
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Debug - Mayank|Any CPU.Build.0 = Debug - Mayank|Any CPU
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{ACE05C96-093B-455A-AA0D-A026B76A4853}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A3CB5922-F58C-4BDD-934A-3C1E3C3A231D}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{A3CB5922-F58C-4BDD-934A-3C1E3C3A231D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A3CB5922-F58C-4BDD-934A-3C1E3C3A231D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Debug - Mayank|Any CPU.Build.0 = Debug - Mayank|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Debug - Mayank|Any CPU.Build.0 = Debug - Mayank|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7F0D195E-3E9A-41E5-98AA-254204F009A8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Debug - Mayank|Any CPU.Build.0 = Debug - Mayank|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{158045BE-5F43-4356-8FEC-973AA7D07FAE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Debug - Mayank|Any CPU.Build.0 = Debug - Mayank|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{A322A261-139A-4EE0-A566-22FBFECC4F1E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E6CD5B96-3AB8-41E1-B15E-1C63BF86E806}.Debug - Mayank|Any CPU.ActiveCfg = Debug - Mayank|Any CPU
+		{E6CD5B96-3AB8-41E1-B15E-1C63BF86E806}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E6CD5B96-3AB8-41E1-B15E-1C63BF86E806}.Release|Any CPU.ActiveCfg = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal

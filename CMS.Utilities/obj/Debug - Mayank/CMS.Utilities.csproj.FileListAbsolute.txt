@@ -1,0 +1,4 @@
+G:\TFS_New\CMS.Utilities\bin\Debug - Mayank\CMS.Utilities.dll
+G:\TFS_New\CMS.Utilities\bin\Debug - Mayank\CMS.Utilities.pdb
+G:\TFS_New\CMS.Utilities\obj\Debug - Mayank\CMS.Utilities.dll
+G:\TFS_New\CMS.Utilities\obj\Debug - Mayank\CMS.Utilities.pdb

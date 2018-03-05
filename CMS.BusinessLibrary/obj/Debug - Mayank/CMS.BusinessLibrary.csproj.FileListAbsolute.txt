@@ -1,0 +1,13 @@
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.BusinessLibrary.dll
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.BusinessLibrary.pdb
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Entity.dll
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Repository.dll
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Utilities.dll
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\EntityFramework.dll
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Entity.pdb
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Repository.pdb
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\CMS.Utilities.pdb
+G:\TFS_New\CMS.BusinessLibrary\bin\Debug - Mayank\EntityFramework.xml
+G:\TFS_New\CMS.BusinessLibrary\obj\Debug - Mayank\CMS.BusinessLibrary.csprojResolveAssemblyReference.cache
+G:\TFS_New\CMS.BusinessLibrary\obj\Debug - Mayank\CMS.BusinessLibrary.dll
+G:\TFS_New\CMS.BusinessLibrary\obj\Debug - Mayank\CMS.BusinessLibrary.pdb

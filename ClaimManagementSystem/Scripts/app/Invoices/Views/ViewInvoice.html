@@ -1,0 +1,112 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">View Invoice Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom40">
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Invoice Information</legend>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="claimNo" class="col-xs-4 col-md-3 control-label">Claim #</label>
+                    <div class="col-xs-8 col-md-9">
+                        <label id="claimNo" name="claimNo" class="control-label">
+                            {{invoice.claimNumber}}
+                        </label>
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Invoice #</label>
+                    <div class="col-xs-8 col-md-9 text-left">
+                        <label class="control-label">
+                            {{invoice.invoiceNumber}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Police No</label>
+                    <div class="col-xs-8 col-md-9 text-left">
+                        <label class="control-label">
+                            {{invoice.policyNumber}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-sm-3 control-label">Loss Type</label>
+                    <div class="col-xs-8 col-sm-9 text-left">
+                        <label class="control-label">
+                            {{invoice.lossType}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Company</label>
+                    <div class="col-xs-8 col-md-9 text-left">
+                        <label class="control-label">
+                            {{invoice.companyName}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-sm-3 control-label">Claimant</label>
+                    <div class="col-xs-8 col-sm-9 text-left">
+                        <label class="control-label">
+                            {{invoice.claimantName}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Invoice Date</label>
+                    <div class="col-xs-8 col-md-9 text-left">
+                        <label class="control-label">
+                            {{invoice.invoiceDate}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-sm-3 control-label">Due Date</label>
+                    <div class="col-xs-8 col-sm-9 text-left">
+                        <label class="control-label">
+                            {{invoice.dueDate}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Invoice Amount</label>
+                    <div class="col-xs-8 col-md-9 text-left">
+                        <label class="control-label">
+                            {{invoice.invoiceTotal}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Time Logs</legend>
+            <div class="col-xs-12">
+                <div kendo-grid="invoiceTimelogGrid" id="invoiceTimelogGrid" options="invoiceRaisedTimelogGridOptions">
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/claims" class="k-button">Back to Manage Claims</a> &nbsp;
+            <a href="#/viewClaim/{{invoice.claimId}}" class="k-button">Back to Claim</a> &nbsp;
+            <a href="#/invoices/{{invoice.claimId}}" class="k-button">View all Invoices</a> &nbsp;
+            <a href="#/editInvoice/{{invoice.timelogId}}" class="k-button">Edit Details</a> &nbsp;
+            <a href="#/newInvoice/{{invoice.claimId}}" class="k-button">Add Invoice</a>
+        </div>
+    </div>
+</section>

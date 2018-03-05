@@ -1,0 +1,81 @@
+<?xml version="1.0"?>
+<package xmlns="http://schemas.microsoft.com/packaging/2011/08/nuspec.xsd">
+  <metadata>
+    <id>Aspose.Words</id>
+    <version>17.2.0</version>
+    <title>Aspose.Words for .NET</title>
+    <authors>Aspose</authors>
+    <owners>Aspose</owners>
+    <licenseUrl>http://www.aspose.com/corporate/purchase/end-user-license-agreement.aspx</licenseUrl>
+    <projectUrl>http://www.aspose.com/categories/.net-components/aspose.words-for-.net/default.aspx</projectUrl>
+    <iconUrl>http://www.aspose.com/images/products/dotnet/Aspose.Words_128x128.png</iconUrl>
+    <requireLicenseAcceptance>true</requireLicenseAcceptance>
+    <description>Aspose.Words for .NET is a class library for .NET that enables you to perform a wide range of document processing tasks directly within your .NET applications.</description>
+    <summary />
+    <releaseNotes>Aspose.Words for .NET 17.2.0 Release Notes
+
+This page contains release notes for Aspose.Words for .NET 17.2.0
+
+Major Features
+
+There are 46 improvements and fixes in this regular monthly release. The most notable are:
+•	Export fonts to HTML in Base64 encoding
+•	Added CssFolder property to HtmlSaveOptions
+•	Added HtmlSaveOptions.ResourceFolder and HtmlSaveOptions.ResourceFolderAlias public properties
+•	Exposed access to Height/Width of Text Frames
+•	Improved control over BiDi text direction elements
+•	Non-bidi fields that contain hided bidi whitespaces are properly resolved
+
+Full List of Issues Covering all Changes in this Release
+
+Key	Summary	Category
+WORDSNET-12975	Math equation's alignment is changed in output Pdf	Bug
+WORDSNET-13516	Document.Compare returns incorrect revisions	Bug
+WORDSNET-13568	Left indentation of list items is incorrect in generated ODT	Bug
+WORDSNET-13719	pic:pic element is not written during RTF to DOCX conversion	Bug
+WORDSNET-13993	Cell's background-colors is not correct in output Html/Docx/Pdf	Bug
+WORDSNET-14008	Footnote line renders higher in PDF	Bug
+WORDSNET-14076	/hidden cell break/ When Converted To PDF, text in output file is not on same page like in original Word document.	Bug
+WORDSNET-14393	Page break is lost after re-saving WordML document	Bug
+WORDSNET-14464	Attributes related to FitText are improperly read into the model of the .DOC document.	Bug
+WORDSNET-14481	Docx to Pdf conversion issue with TOC item rendering	Bug
+WORDSNET-14537	Single Solid-line in word document converts double border for the images in HTML	Bug
+WORDSNET-14553	Docx to HtmlFixed conversion issue with table's borders	Bug
+WORDSNET-14595	StyleCollection.addCopy - Breaking the Multi Level List numbering for Heading styles	Bug
+WORDSNET-14606	A text overlaps on top left logo image in PDF	Bug
+WORDSNET-14654	Extra TOC entry is rendered in output Pdf	Bug
+WORDSNET-14670	Bookmark missing after open and resave document using Aspose.Words	Bug
+WORDSNET-14674	Header contents are lost after conversion from Docx to Pdf	Bug
+WORDSNET-14676	Docx to Pdf conversion issue with hyperlinks	Bug
+WORDSNET-14678	When DOCX is saved as PDF by using a FileStream or MemoryStream, then the output document is missing some elements.	Bug
+WORDSNET-14684	Position of SmartArt elements are changed in output Pdf	Bug
+WORDSNET-14685	Docx to Pdf conversion issue with hyperlinks	Bug
+WORDSNET-14686	Document.Compare increases the Table's cells	Bug
+WORDSNET-14689	List numberings changes from alphabets to numbers during rendering	Bug
+WORDSNET-14698	UpdateFields truncates text in bookmark cross-reference	Bug
+WORDSNET-14703	A formula errors to "divide by zero" when calling UpdateFields	Bug
+WORDSNET-14717	Charts become invisible in output HtmlFixed	Bug
+WORDSNET-14728	Word to PDF conversion create "double encodes" hyperlinks	Bug
+WORDSNET-14732	Some text content is repeated in rendered document	Bug
+WORDSNET-14749	Rtf to Doc conversion issue with page numbers of TOC field.	Bug
+WORDSNET-14752	When open document, a Aspose.Words.FileCorruptedException occurs.	Bug
+WORDSNET-14761	HTML document has no link to external CSS file when callback is used	Bug
+WORDSNET-14768	Horizontal Axis of chart does not render correctly in output PNG	Bug
+WORDSNET-14792	Document.Compare does not work for CheckBox (FormField)	Bug
+WORDSNET-11771	Support the dir and the bdo elements	Enhancement
+WORDSNET-14579	Date Field with mixed bidi/non-bidi formatting.	Enhancement
+WORDSNET-14589	Add CssFolder property to HtmlSaveOptions	Enhancement
+WORDSNET-14590	Discrepancy between HtmlSaveOptions and HtmlFixedSaveOptions regarding ImagesFolder and FontsFolder properties.	Enhancement
+WORDSNET-14713	More horizontal spacing between paragraphs of the same style when exporting to HTML	Enhancement
+WORDSNET-14741	Review when Word ignores strokes with weight less that 1 pt	Enhancement
+WORDSNET-14636	Aspose.Words.FileCorruptedException occurs upon loading a DOCX	Exception
+WORDSNET-14642	Document.Save method throws System.InvalidOperationException whend document is re-saved	Exception
+WORDSNET-14702	FileCorruptedException caused by charts	Exception
+WORDSNET-14746	NullReferenceException while mailmerge	Exception
+WORDSNET-14762	Export fonts to HTML in Base64 encoding	Feature
+WORDSNET-5645	Expose (Height/Width) access to Text Frames	Feature
+WORDSNET-6833	OutOfMemoryException occurs during rendering DOCX to PDF	Performance</releaseNotes>
+    <copyright>(C) Aspose 2002-2017. All Rights Reserved.</copyright>
+    <tags>Word DOC DOCX OOXML OpenDocument PDF XPS ODT HTML XHTML WordprocessingML Document EPUB</tags>
+  </metadata>
+</package>

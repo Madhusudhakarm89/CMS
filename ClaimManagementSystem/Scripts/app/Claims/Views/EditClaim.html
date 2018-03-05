@@ -1,0 +1,467 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Edit Claim Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom20">
+    <form class="form-horizontal" role="form" novalidate name="claimForm" id="claimForm" kendo-validator="validator">
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Claim Information<span class="hint12 pull-right">All <span class="red bold">*</span> marked fields are mandatory</span></legend>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="claimant" class="col-xs-4 control-label">Claimant <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="claimant" name="claimant" class="form-control" kendo-auto-complete
+                                   k-ng-model="claim.claimant" k-options="claimantOptions" required />
+                            <a href="#/newContact" class="k-link pull-right" data-toggle="tooltip" data-placement="top"
+                               title="Create the Claimant record first, if it does not exist">Add Claimant</a>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="company" class="col-xs-4 control-label">Company <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="company" name="company" class="kendo-auto-complete form-control"
+                                   k-ng-model="claim.company" k-options="companyOptions" required />
+                            <a href="#/newCompany" class="k-link pull-right" data-toggle="tooltip" data-placement="top"
+                               title="Create the Company record first, if it does not exist">Add Company</a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="contact" class="col-xs-4 control-label">Contact <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="contact" name="contact" class="kendo-auto-complete form-control"
+                                   k-ng-model="claim.contact" k-options="contactOptions" required />
+                            <a href="#/newContact" class="k-link pull-right" data-toggle="tooltip" data-placement="top"
+                               title="Create the Contact record first, if it does not exist">Add Contact</a>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="fileNo" class="col-xs-4 control-label">File #</label>
+                        <div class="col-xs-8">
+                            <label class="label" id="fileNo" name="fileNo">{{claim.fileNo}}</label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="claimNo" class="col-xs-4 control-label">Claim #</label>
+                        <div class="col-xs-8">
+                            <input id="claimNo" name="claimNo" type="text" class="k-textbox form-control" placeholder="Claim No"
+                                   ng-model="claim.claimNo" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="policyNo" class="col-xs-4 control-label">Policy #</label>
+                        <div class="col-xs-8">
+                            <input id="policyNo" name="policyNo" type="text" class="k-textbox form-control" placeholder="Policy Number"
+                                   ng-model="claim.policyNo" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="loanNo" class="col-xs-4 control-label">Loan #</label>
+                        <div class="col-xs-8">
+                            <input id="loanNo" name="loanNo" type="text" class="k-textbox form-control" placeholder="Loan Number"
+                                   ng-model="claim.loanNo" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="mortgagee" class="col-xs-4 control-label">Mortgagee</label>
+                        <div class="col-xs-8">
+                            <input id="mortgagee" name="mortgagee" type="text" class="k-textbox form-control" placeholder="Mortgagee"
+                                   ng-model="claim.mortgagee" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="receivedDate" class="col-xs-4 control-label">Date Received <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="receivedDate" name="receivedDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.receivedDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="lossDate" class="col-xs-4 control-label">Date of Loss <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="lossDate" name="lossDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.lossDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="firstContactDate" class="col-xs-4 control-label">Date of First Contact <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="firstContactDate" name="firstContactDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.firstContactDate" k-format="MM/dd/yyyy" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="inspectionDate" class="col-xs-4 control-label">Date of Inspection</label>
+                        <div class="col-xs-8">
+                            <input id="inspectionDate" name="inspectionDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.inspectionDate" k-format="MM/dd/yyyy" k-parse-formats="['MM/dd/yyyy']" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="dueDate" class="col-xs-4 control-label">Due Date <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="dueDate" name="dueDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.dueDate" k-format="MM/dd/yyyy" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="lossType" class="col-xs-4 control-label">Type of Loss <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <!--<input id="lossType" name="lossType" kendo-auto-complete class="form-control" k-options="lossTypeOptions"
+                        ng-model="claim.lossType" required />-->
+                            <!--<input id="lossType" name="lossType" type="text" class="k-textbox form-control" placeholder="Type of Loss"
+                                   ng-model="claim.lossType" required />-->
+                            <input id="lossType" name="lossType" class="kendo-drop-down-list form-control"
+                                   ng-model="claim.lossType" required
+                                   k-data-source="LossTypeOptions" k-data-text-field="'lossTypeName'" k-data-value-field="'lossTypeId'"
+                                   k-option-label="'Select Loss Type'" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="adjustmentType" class="col-xs-4 control-label">Type of Adjustment</label>
+                        <div class="col-xs-8">
+                            <!--<input id="adjustmentType" name="adjustmentType" kendo-auto-complete class="form-control" k-options="adjustmentTypeOptions"
+                            ng-model="claim.adjustmentType" required />-->
+                            <input id="adjustmentType" name="adjustmentType" type="text" class="k-textbox form-control" placeholder="Adjustment Type"
+                                   ng-model="claim.adjustmentType" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="lossTotal" class="col-xs-4 control-label">Total Loss (Urgent)</label>
+                        <div class="col-xs-8">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="claim.lossTotalUrgent" ng-model="claim.lossTotalUrgent"
+                                   id="lossTotalUrgent" name="lossTotalUrgent" />
+                            <label for="lossTotalUrgent" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="mouldClaim" class="col-xs-4 control-label">Mould Claim</label>
+                        <div class="col-xs-8">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="claim.mouldClaim" ng-model="claim.mouldClaim"
+                                   id="mouldClaim" name="mouldClaim" />
+                            <label for="mouldClaim" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="manager" class="col-xs-4 control-label">Assign Manager <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="manager" name="manager" kendo-auto-complete class="form-control" k-options="managerOptions"
+                                   k-ng-model="claim.manager" required />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="adjuster" class="col-xs-4 control-label">Assign Adjuster <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="adjuster" name="adjuster" kendo-auto-complete class="form-control" k-options="adjusterOptions"
+                                   k-ng-model="claim.adjuster" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="branch" class="col-xs-4 control-label">Assign Branch</label>
+                        <div class="col-xs-8">
+                            <!--<input id="branch" name="branch" kendo-auto-complete class="form-control" k-options="branchOptions"
+                                   ng-model="claim.branch" required />-->
+                            <input id="branch" name="branch" type="text" class="k-textbox form-control" placeholder="Branch"
+                                   ng-model="claim.branch" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="lossDescription" class="col-xs-4 control-label">Loss Description</label>
+                        <div class="col-xs-8">
+                            <textarea id="lossDescription" name="lossDescription" class="k-editable-area form-control" placeholder="Please provide loss description here.."
+                                      rows="3" ng-model="claim.lossDescription"></textarea>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="instruction" class="col-xs-4 control-label">Instruction</label>
+                        <div class="col-xs-8">
+                            <textarea id="instruction" name="instruction" class="k-editable-area form-control" placeholder="Please provide claim instruction here.."
+                                      rows="3" ng-model="claim.instruction"></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="status" class="col-xs-4 control-label">Status <span class="red bold">*</span></label>
+                        <div class="col-xs-8">
+                            <input id="status" name="status" class="kendo-drop-down-list form-control"
+                                   ng-model="claim.statusId" required
+                                   k-data-source="ClaimStatusOptions" k-data-text-field="'status'" k-data-value-field="'claimStatusId'"
+                                   k-option-label="'Select Claim Status'" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Coverage Information</legend>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="vinNo" class="col-xs-4 control-label">VIN #</label>
+                        <div class="col-xs-8">
+                            <input id="vinNo" name="vinNo" type="text" class="k-textbox form-control" placeholder="VIN No"
+                                   ng-model="claim.vinNo" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="deductible" class="col-xs-4 control-label">Deductible</label>
+                        <div class="col-xs-8">
+                            <input id="deductible" name="deductible" type="text" class="k-textbox form-control" placeholder="Deductible"
+                                   ng-model="claim.deductible" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="windDeductible" class="col-xs-4 control-label">Wind Deductible</label>
+                        <div class="col-xs-8">
+                            <input id="windDeductible" name="windDeductible" type="text" class="k-textbox form-control" placeholder="Wind Deductible"
+                                   ng-model="claim.windDeductible" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="premium" class="col-xs-4 control-label">Premium</label>
+                        <div class="col-xs-8">
+                            <input id="premium" name="premium" type="text" class="k-textbox form-control" placeholder="Premium"
+                                   ng-model="claim.premium" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="building" class="col-xs-4 control-label">Building</label>
+                        <div class="col-xs-8">
+                            <input id="building" name="building" type="text" class="k-textbox form-control" placeholder="Building"
+                                   ng-model="claim.building" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="subrogation" class="col-xs-4 control-label">Subrogation</label>
+                        <div class="col-xs-8">
+                            <input id="subrogation" name="subrogation" type="text" class="k-textbox form-control" placeholder="Subrogation"
+                                   ng-model="claim.subrogation" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="salvage" class="col-xs-4 control-label">Salvage</label>
+                        <div class="col-xs-8">
+                            <input id="salvage" name="salvage" type="text" class="k-textbox form-control" placeholder="Salvage"
+                                   ng-model="claim.salvage" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="businessPersonalProperty" class="col-xs-4 control-label">Business Personal Property</label>
+                        <div class="col-xs-8">
+                            <input id="businessPersonalProperty" name="businessPersonalProperty" type="text" class="k-textbox form-control" placeholder="Business Personal Property"
+                                   ng-model="claim.businessPersonalProperty" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="contents" class="col-xs-4 control-label">Contents</label>
+                        <div class="col-xs-8">
+                            <input id="contents" name="contents" type="text" class="k-textbox form-control" placeholder="Contents"
+                                   ng-model="claim.contents" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="ale" class="col-xs-4 control-label">ALE</label>
+                        <div class="col-xs-8">
+                            <input id="ale" name="ale" type="text" class="k-textbox form-control" placeholder="ALE"
+                                   ng-model="claim.ale" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="detachedrivateStructures" class="col-xs-4 control-label">Detached Private Structures</label>
+                        <div class="col-xs-8">
+                            <input id="detachedPrivateStructures" name="detachedPrivateStructures" type="text" class="k-textbox form-control" placeholder="Detached Private Structures"
+                                   ng-model="claim.detachedPrivateStructures" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="condominiumImprovements" class="col-xs-4 control-label">Condominium Improvements / Betterents</label>
+                        <div class="col-xs-8">
+                            <input id="condominiumImprovements" name="condominiumImprovements" type="text" class="k-textbox form-control" placeholder="Condominium Improvements / Betterents"
+                                   ng-model="claim.condominiumImprovements" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 hidden">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="industrialHygenist" class="col-xs-4 control-label">Industrial Hygenist</label>
+                        <div class="col-xs-8">
+                            <input id="industrialHygenist" name="industrialHygenist" type="text" class="k-textbox form-control" placeholder="Industrial Hygenist"
+                                   ng-model="claim.industrialHygenist" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="adjustingFee" class="col-xs-4 control-label">Adjusting Fee</label>
+                        <div class="col-xs-8">
+                            <input id="adjustingFee" name="adjustingFee" type="text" class="k-textbox form-control" placeholder="Adjusting Fee"
+                                   ng-model="claim.adjustingFee" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="policyEffectiveDate" class="col-xs-4 control-label">Policy Effective Date</label>
+                        <div class="col-xs-8">
+                            <input id="policyEffectiveDate" name="policyEffectiveDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.policyEffectiveDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" ng-required="claim.PolicyExpirationDate" />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="policyExpirationDate" class="col-xs-4 control-label">Policy Expiration Date</label>
+                        <div class="col-xs-8">
+                            <input id="policyExpirationDate" name="policyExpirationDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claim.policyExpirationDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" ng-required="claim.policyEffectiveDate" />
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Associated Documentation</legend>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="acknowledgementMail" class="col-xs-4 control-label">Acknowledgement Mail</label>
+                        <div class="col-xs-8">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="claim.acknowledgementMail" ng-model="claim.acknowledgementMail"
+                                   id="acknowledgementMail" name="acknowledgementMail" />
+                            <label for="acknowledgementMail" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="lossNotice" class="col-xs-4 control-label">Loss Notice</label>
+                        <div class="col-xs-8">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="claim.lossNotice" ng-model="claim.lossNotice"
+                                   id="lossNotice" name="lossNotice" />
+                            <label for="lossNotice" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 text-right">
+                <a href="#/claims" class="k-button">Back to Claims</a> &nbsp;
+                <input type="button" class="k-button" value="Reset" ng-click="ResetClaim()" /> &nbsp;
+                <input type="submit" class="k-button k-primary" value="Save" ng-click="UpdateClaim($event)" />
+            </div>
+        </div>
+        <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+            {{ message }}
+        </div>
+    </form>
+    <div class="col-xs-12 paddingTopBottom10">
+        <div kendo-tab-strip k-content-urls="[ null, null]" style="width: 98%;">
+            <!-- tab list -->
+            <ul>
+                <li class=" k-state-active">Notes & Tasks</li>
+                <li>Timelogs</li>
+                <li>Associated Photos</li>
+                <li>Associated Document</li>
+            </ul>
+            <div class="col-xs-12 paddingTop5">
+                <fieldset>
+                    <legend>
+                        Manage Notes
+                    </legend>
+                    <div class="form-group paddingTop5">
+                        <div kendo-grid="claimNotesGrid" id="claimNotesGrid" options="claimNotesGridOptions">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12 paddingTop5">
+                <fieldset>
+                    <legend>
+                        Manage Timelogs
+                    </legend>
+                    <div class="form-group paddingTop5">
+                        <div kendo-grid="claimTimelogsGrid" id="claimTimelogsGrid" options="claimTimelogsGridOptions">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12 paddingTop5">
+                <fieldset>
+                    <legend>Manage Photos</legend>
+                    <div class="form-group">
+                        <div class="hint">
+                            <span>You can only upload <strong>BMP</strong>, <strong>JPG</strong>, <strong>JPEG</strong>, <strong>PNG</strong> and <strong>TIFF</strong> files.</span>
+                            <span>Maximum allowed file size is <strong>4 MB</strong>.</span>
+                        </div>
+                        <input type="file" id="claimImages" name="claimFiles" kendo-upload k-options="imageUploadOptions" />
+                        <div class="form-group paddingTop20">
+                            <div kendo-grid="associatedPhotosForClaimGrid" id="associatedPhotosForClaimGrid" options="claimImagesGridOptions">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12 paddingTop5">
+                <fieldset>
+                    <legend>Manage Document</legend>
+                    <div class="form-group">
+                        <div class="hint">
+                            <span>You can only upload <strong>TXT</strong>, <strong>RTF</strong>, <strong>CSV</strong>, <strong>DOC / DOCX</strong>, <strong>XLS / XLSX</strong>, <strong>PPT / PPTX</strong> and <strong>PDF</strong> files.</span>
+                            <span>Maximum allowed file size is <strong>4 MB</strong>.</span>
+                        </div>
+                        <input type="file" id="claimDocuments" name="claimFiles" kendo-upload k-options="documentUploadOptions" />
+                    </div>
+                    <div class="form-group paddingTop20">
+                        <div kendo-grid="associatedDocumentsForClaimGrid" id="associatedDocumentsForClaimGrid" options="claimDocumentsGridOptions">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/newClaimNote/{{claim.claimId}}" class="k-button pull-right">Add Note / Task</a> &nbsp;
+            <a href="#/newTimelog/{{claim.claimId}}" class="k-button pull-right">Add Timelog</a> &nbsp;
+        </div>
+    </div>
+</section>
+<script>
+    $(document).ready(function () {
+        $("#phone").kendoMaskedTextBox({
+            mask: "(999) 000-0000"
+        });
+
+        $("#cell").kendoMaskedTextBox({
+            mask: "(999) 000-0000"
+        });
+
+        $('[data-toggle="tooltip"]').tooltip();
+    });
+</script>

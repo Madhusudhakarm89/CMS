@@ -1,0 +1,98 @@
+﻿@using ClaimManagementSystem.Infrastructure.Extensions;
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <link href="~/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <title>Mobiclaims</title>
+
+    @Styles.Render("~/Content/kendo/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/angular")
+    @Scripts.Render("~/bundles/kendo")
+    @*@Scripts.Render("~/bundles/kendo/angular")*@
+    @Scripts.Render("~/bundles/jqueryval")
+
+    <script src="@Url.Content("~/Scripts/master.js")" type="text/javascript"></script>
+
+    @Scripts.Render("~/bundles/app")
+    <!--[if lt IE 9]>
+      <script src="@Url.Content("~/Scripts/html5shiv.min.js")" type="text/javascript"></script>
+      <script src="@Url.Content("~/Scripts/respond.min.js")" type="text/javascript"></script>
+    <![endif]-->
+</head>
+<body ng-app="ClaimsManagementModule">
+    <!-- Application Header -->
+    <div class="header h">
+        <div class="container">
+            <div class="section row">
+                <aside class="col-xs-12 pull-right">
+                    @if (User.Identity.IsAuthenticated)
+                    {
+                        <div class="userProfile">
+                            Welcome, @User.Identity.FullName() &nbsp; | &nbsp;
+                            <span class="userProfileLink">
+                                <i class="glyphicon glyphicon-user white"></i>
+                                <ul>
+                                    <li><a href="@Url.Action("ChangePassword", "Account", new { Area = string.Empty })">Change Password</a></li>
+                                    <li><a href="@Url.Action("Logout", "Account", new { Area = string.Empty })">Logout</a></li>
+                                </ul>
+                            </span>
+                        </div>
+                    }
+                </aside>
+                <aside class="col-xs-12 verticalBottom">
+                    @*<a href="javascript:void(0);" target="_blank"><img src="#" alt="Client Logo"></a>*@
+
+                    <div class="col-xs-4 col-md-4">
+                        <img src="@Url.Content("~/Content/Site/Images/Mobiclaims-Logo.png")" alt="Product Logo">
+                    </div>
+                    
+                    <div class="col-xs-4 col-md-3">
+                    </div>
+                </aside>
+            </div>
+        </div>
+        <div class="container NavBg">
+            <div class="section row">
+                <div class="text-left" ng-controller="NavigationController">
+                    <section class="Navigation col-xs-12">
+                        <ul>
+                            <li ng-class="{'act': isActiveMenuItem('/myclaims',true)}"><a href="#/myclaims">MyClaims</a></li>
+                          </ul>  
+                        </section>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script type="text/javascript">
+            SetApplicationBaseURL('@String.Format("{0}{1}", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority), HttpContext.Current.Request.ApplicationPath)', '@ViewContext.RouteData.DataTokens["Area"]', '@ViewContext.RouteData.Values["Controller"].ToString()', '@ViewContext.RouteData.Values["Action"].ToString()', '', '@ViewContext.RouteData.Values["Id"]');
+        </script>
+
+
+        <!-- /Application Header -->
+
+        <canvas id="svg-canvas" class="hidden"></canvas>
+        <div id="loaderDiv" style="display:none" ng-show="showProgressLoader">
+            <section class="loader">Loading...</section>
+        </div>
+
+        @RenderBody()
+        @RenderSection("SPAViews", required: false)
+
+        <footer class="container">
+            <div class="section row">
+                <p>&copy; @DateTime.Now.Year - Mobiclaims.com. All right reserved.</p>
+            </div>
+        </footer>
+        @Scripts.Render("~/bundles/bootstrap")
+        @RenderSection("Scripts", required: false)
+
+    </body>
+</html>
+

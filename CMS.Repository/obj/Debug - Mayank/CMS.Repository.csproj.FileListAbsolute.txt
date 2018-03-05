@@ -1,0 +1,14 @@
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Repository.dll.config
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Repository.dll
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Repository.pdb
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Entity.dll
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Utilities.dll
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\EntityFramework.dll
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\EntityFramework.SqlServer.dll
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Entity.pdb
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\CMS.Utilities.pdb
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\EntityFramework.xml
+G:\TFS_New\CMS.Repository\bin\Debug - Mayank\EntityFramework.SqlServer.xml
+G:\TFS_New\CMS.Repository\obj\Debug - Mayank\CMS.Repository.csprojResolveAssemblyReference.cache
+G:\TFS_New\CMS.Repository\obj\Debug - Mayank\CMS.Repository.dll
+G:\TFS_New\CMS.Repository\obj\Debug - Mayank\CMS.Repository.pdb

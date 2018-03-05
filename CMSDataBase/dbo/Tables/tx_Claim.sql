@@ -1,0 +1,67 @@
+﻿CREATE TABLE [dbo].[tx_Claim] (
+    [ClaimId]                   INT             IDENTITY (1, 1) NOT NULL,
+    [CompanyId]                 INT             NOT NULL,
+    [ContactId]                 INT             NOT NULL,
+    [FileNo]                    NVARCHAR (200)  NOT NULL,
+    [ClaimNo]                   NVARCHAR (200)  NOT NULL,
+    [ClaimantId]                INT             NULL,
+    [PolicyNo]                  NVARCHAR (200)  NULL,
+    [PolicyEffectiveDate]       DATETIME        NULL,
+    [PolicyExpirationDate]      DATETIME        NULL,
+    [LoanNo]                    NVARCHAR (200)  NULL,
+    [Mortgagee]                 NVARCHAR (200)  NULL,
+    [ReceivedDate]              DATETIME        NULL,
+    [LossDate]                  DATETIME        NULL,
+    [LossType]                  NVARCHAR (200)  NULL,
+    [AdjustmentType]            NVARCHAR (200)  NULL,
+    [LossTotalUrgent]           BIT             NULL,
+    [MouldClaim]                BIT             NULL,
+    [ManagerId]                 NVARCHAR (128)  NULL,
+    [AdjusterId]                NVARCHAR (128)  NULL,
+    [Branch]                    NVARCHAR (200)  NULL,
+    [LossDescription]           NVARCHAR (MAX)  NULL,
+    [Instruction]               NVARCHAR (MAX)  NULL,
+    [VINNo]                     NVARCHAR (200)  NULL,
+    [Deductible]                NVARCHAR (200)  NULL,
+    [WindDeductible]            NVARCHAR (200)  NULL,
+    [Premium]                   NVARCHAR (200)  NULL,
+    [Building]                  NVARCHAR (200)  NULL,
+    [Subrogation]               NVARCHAR (200)  NULL,
+    [Salvage]                   NVARCHAR (200)  NULL,
+    [BusinessPersonalProperty]  NVARCHAR (200)  NULL,
+    [Contents]                  NVARCHAR (200)  NULL,
+    [Ale]                       NVARCHAR (200)  NULL,
+    [DetachedPrivateStructures] NVARCHAR (200)  NULL,
+    [CondominiumImprovements]   NVARCHAR (200)  NULL,
+    [IndustrialHygenist]        NVARCHAR (200)  NULL,
+    [AdjustingFee]              DECIMAL (18, 6) NULL,
+    [FirstContactDate]          DATETIME        NULL,
+    [InspectionDate]            DATETIME        NULL,
+    [DueDate]                   DATETIME        CONSTRAINT [DF_tx_Claim_DueDate] DEFAULT (getdate()) NULL,
+    [ClosedDate]                DATETIME        NULL,
+    [AcknowledgementMail]       BIT             NULL,
+    [LossNotice]                BIT             NULL,
+    [ClaimStatusId]             INT             NULL,
+    [SubscribeToAlert]          BIT             NULL,
+    [VisibleToClient]           BIT             NULL,
+    [CreatedBy]                 NVARCHAR (128)  NOT NULL,
+    [CreatedOn]                 DATETIME        CONSTRAINT [DF_tx_Claim_CreatedOn] DEFAULT (getdate()) NOT NULL,
+    [LastModifiedBy]            NVARCHAR (128)  NOT NULL,
+    [LastModifiedOn]            DATETIME        CONSTRAINT [DF_tx_Claim_LastModifiedOn] DEFAULT (getdate()) NOT NULL,
+    [IsActive]                  BIT             CONSTRAINT [DF_tx_Claim_IsActive] DEFAULT ((1)) NOT NULL,
+    CONSTRAINT [PK_tx_Claim] PRIMARY KEY CLUSTERED ([ClaimId] ASC),
+    CONSTRAINT [FK_tx_Claim_AspNetUsers_Adjuster] FOREIGN KEY ([AdjusterId]) REFERENCES [dbo].[AspNetUsers] ([Id]),
+    CONSTRAINT [FK_tx_Claim_AspNetUsers_Manager] FOREIGN KEY ([ManagerId]) REFERENCES [dbo].[AspNetUsers] ([Id]),
+    CONSTRAINT [FK_tx_Claim_tx_Account] FOREIGN KEY ([CompanyId]) REFERENCES [dbo].[tx_Account] ([AccountId]),
+    CONSTRAINT [FK_tx_Claim_tx_Contact] FOREIGN KEY ([ContactId]) REFERENCES [dbo].[tx_Contact] ([ContactId]),
+    CONSTRAINT [FK_tx_Claim_tx_Contact_Claimant] FOREIGN KEY ([ClaimantId]) REFERENCES [dbo].[tx_Contact] ([ContactId])
+);
+
+
+
+
+
+
+
+
+

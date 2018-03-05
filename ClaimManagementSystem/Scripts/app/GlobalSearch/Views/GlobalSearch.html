@@ -1,0 +1,32 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Search Results</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <aside class="PageHeader2 text-left">
+        Search keyword: {{searchKeyword}}
+    </aside>
+</section>
+<section class="col-xs-12 paddingTopBottom10">
+    <aside class="PageHeader2 text-left">
+        Claims
+    </aside>
+    <div kendo-grid="claimGrid_GlobalSearch" id="claimGrid_GlobalSearch" options="claimGridOptions_GlobalSearch">
+    </div>
+</section>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <aside class="PageHeader2 text-left">
+        Companies
+    </aside>
+    <div kendo-grid="companyGrid_GlobalSearch" id="companyGrid_GlobalSearch" options="companiesGridOptions_GlobalSearch">
+    </div>
+</section>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <aside class="PageHeader2 text-left">
+        Contacts
+    </aside>
+    <div kendo-grid="contactGrid_GlobalSearch" id="contactGrid_GlobalSearch" options="contactsGridOptions_GlobalSearch">
+    </div>
+</section>

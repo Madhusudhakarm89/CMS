@@ -1,0 +1,123 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">View Profile Details</h1>
+    <a href="#/editProfile/{{user.userId}}" class="k-button pull-right">Edit Profile</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom20">
+    <form class="form-horizontal" role="form" name="userForm" id="userForm" kendo-validator="validator" ng-submit="validate($event)">
+        
+        <div class="col-xs-12  paddingTopBottom10">
+            <fieldset>
+                <div class="col-xs-12 text-right">
+                    <img id="imageId" class="profileImageClass" />
+
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Personal Information</legend>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">First Name</label>
+                        <label class="col-xs-9 col-lg-10 control-label" style="text-align:left" id="firstName" >{{user.firstName}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Last Name</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="lastName" name="lastName" style="text-align:left">{{user.lastName}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Email</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="email" name="email" style="text-align:left">{{user.email}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Phone</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="phone" name="phone" style="text-align:left">{{user.phone}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Cell</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="cell" name="cell" style="text-align:left">{{user.cell}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Department</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="department" name="department" style="text-align:left">{{user.department}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Company</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="companyName" name="companyName" style="text-align:left">{{user.companyName}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-lg-2 control-label">Status</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="statusName" name="statusName" style="text-align:left">{{user.statusMsg}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">User Type</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="userTypeName" name="userTypeName" style="text-align:left">{{user.userTypeName}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">User Profile</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="ProfileType" name="ProfileType" style="text-align:left">{{user.profileType}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="createdDate" class="col-xs-3 col-sm-2 control-label">Created Date</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="createdDate" name="createdDate" style="text-align:left">{{user.createdDate}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="receiveAlerts" class="col-xs-3 col-sm-2 control-label">Receive Alerts</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="receiveAlerts" name="receiveAlerts" style="text-align:left">{{user.receiveAlerts}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="createdDate" class="col-xs-3 col-sm-2 control-label">Modified Date</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="lastModifiedDate" name="lastModifiedDate" style="text-align:left">{{user.lastModifiedDate}}</label>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Address Information</legend>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Street</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="street" name="street" style="text-align:left">{{user.street}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">City</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="city" name="city" style="text-align:left">{{user.city}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Country</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="countryName" name="countryName" style="text-align:left">{{user.countryName}}</label>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">State</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="provinceName" name="provinceName" style="text-align:left">{{user.provinceName}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Postal Code</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="postalCode" name="postalCode" style="text-align:left">{{user.postalCode}}</label>
+                    </div>
+                </div>
+                
+            </fieldset>
+        </div>
+
+    </form>
+</section>
+

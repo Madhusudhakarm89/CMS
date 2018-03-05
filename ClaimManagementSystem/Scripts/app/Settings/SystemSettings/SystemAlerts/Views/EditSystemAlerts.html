@@ -1,0 +1,65 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Edit System Alert</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom20">
+    <form class="form-horizontal" role="form" novalidate name="systemAlertsEditForm" id="systemAlertsEditForm" kendo-validator="validator" ng-submit="Create($event)">
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Subject</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input type="text" class="k-textbox form-control" placeholder="Subject"
+                                   ng-model="systemAlerts.title" required id="title" name="title" />
+                            <input type="hidden" class="k-textbox form-control"
+                                   ng-model="systemAlerts.alertId" id="alertId" name="alertId" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label class="col-xs-3 col-sm-2 control-label">Message</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <textarea rows="5" class="k-textbox form-control" placeholder="Message"
+                                      ng-model="systemAlerts.description" required id="description" name="description" />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="createdDate" class="col-xs-3 col-sm-2 control-label">Created Date</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="createdDate" name="createdDate" style="text-align:left">{{systemAlerts.createdOn}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="createdDate" class="col-xs-3 col-sm-2 control-label">Modified Date</label>
+                        <label class="col-xs-9 col-lg-10 control-label" id="createdDate" name="createdDate" style="text-align:left">{{systemAlerts.lastModifiedOn}}</label>
+                    </div>
+                </div>
+                <div class="col-xs-12 paddingBottom5">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="receiveAlerts" class="col-xs-3 col-sm-2 control-label">Display</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="systemAlerts.isRead" ng-model="systemAlerts.isRead"
+                                   id="isRead" name="isRead" />
+                            <label for="isRead" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 text-right">
+                <a href="#/systemalerts" class="k-button">Back to System Alerts</a> &nbsp;
+                <input type="button" class="k-button" value="Clear" ng-click="ResetCreateSystemAlerts()" /> &nbsp;
+                <input type="submit" class="k-button k-primary" value="Update" ng-click="UpdateSystemAlerts($event)" />
+            </div>
+        </div>
+        <div class="col-xs-12 alert" ng-class="isSuccess ? 'alert-success' : (isSuccess != undefined ? 'alert-danger' : '')">
+            <span class="status {{ validationClass }}">{{ validationMessage }} </span>
+        </div>
+    </form>
+</section>
+

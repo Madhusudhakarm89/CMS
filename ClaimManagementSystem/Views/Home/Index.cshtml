@@ -1,0 +1,75 @@
+﻿
+<div class="container">
+    @*<div id="loaderDiv" ng-show="showProgressLoader">
+        <section class="loader">Loading...</section>
+    </div>*@
+
+    <div class="section row" style="min-height:350px;" ng-cloak>
+        <div ng-view></div>
+    </div>
+</div>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/ServiceCategory/serviceCategory-service.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/TimeLogUnit/timelogUnit-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/ClaimStatus/claimStatus-service.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/CAP/cap-controller.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/CAP/cap-service.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Home/home-controller.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Home/home-service.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Claims/claim-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Claims/claim-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/ClaimNotes/claimNote-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/ClaimNotes/claimNote-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Companies/company-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Companies/company-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Contacts/contact-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Contacts/contact-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Countries/country-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Countries/country-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/States/state-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/States/state-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Users/user-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Users/user-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/CompanyDocuments/companydocument-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/CompanyDocuments/companydocument-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/GlobalSearch/globalsearch-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/GlobalSearch/globalsearch-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Timelogs/timelog-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Timelogs/timelog-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Invoices/invoice-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Invoices/invoice-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/FileNaming/fileNaming-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/FileNaming/fileNaming-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/ServiceItem/serviceItem-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/ServiceItem/serviceItem-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/TaxSetting/taxSetting-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/TaxSetting/taxSetting-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/SystemAlerts/systemAlerts-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/SystemAlerts/systemAlerts-controller.js")"></script>
+
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/TypeOfLoss/typeOfLoss-service.js")"></script>
+<script type="text/javascript" src="@Url.Content("~/Scripts/app/Settings/SystemSettings/TypeOfLoss/typeOfLoss-controller.js")"></script>
+                
+@section Scripts{
+    @*@Scripts.Render("~/bundles/app/home")
+    @Scripts.Render("~/bundles/app/claims")*@
+}
+

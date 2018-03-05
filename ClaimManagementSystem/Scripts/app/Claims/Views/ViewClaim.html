@@ -1,0 +1,333 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">View Claim Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom20">
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/claims" class="k-button">Back to Claims</a> &nbsp;
+            <input type="button" class="k-button" value="Send Email" disabled ng-click="SendEmail()" /> &nbsp;
+            <a href="#/newClaimNote/{{claim.claimId}}" class="k-button">Add Note / Task</a> &nbsp;
+            <a href="#/newTimelog/{{claim.claimId}}" class="k-button">Add Timelog</a> &nbsp;
+            <a href="#/editClaim/{{claim.claimId}}" class="k-button">Edit Details</a> &nbsp;
+            <a href="#/newClaim" class="k-button">Create New Claim</a>
+        </div>
+    </div>
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Claim Information</legend>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="claimant" class="col-xs-4 col-sm-3 control-label">Claimant</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="claimantName" name="claimantName">{{claim.claimantName}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="company" class="col-xs-4 col-sm-3 control-label">Company</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="companyName" name="companyName">{{claim.companyName}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="contact" class="col-xs-4 col-sm-3 control-label">Contact</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="contactName" name="contactName">{{claim.contactName}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="fileNo" class="col-xs-4 col-sm-3 control-label">File #</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="fileNo" name="fileNo">{{claim.fileNo}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="claimNo" class="col-xs-4 col-sm-3 control-label">Claim #</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="claimNo" name="claimNo">{{claim.claimNo}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="policyNo" class="col-xs-4 col-sm-3 control-label">Policy #</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="policyNo" name="policyNo">{{claim.policyNo}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="mortgagee" class="col-xs-4 col-sm-3 control-label">Mortgagee</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="mortgagee" name="mortgagee">{{claim.mortgagee}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="loanNo" class="col-xs-4 col-sm-3 control-label">Loan #</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="loanNo" name="loanNo">{{claim.loanNo}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="receivedDate" class="col-xs-4 col-sm-3 control-label">Date Received</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="receivedDate" name="receivedDate">{{claim.receivedDate}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="lossDate" class="col-xs-4 col-sm-3 control-label">Date of Loss</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="lossDate" name="lossDate">{{claim.lossDate}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="firstContactDate" class="col-xs-4 col-sm-3 control-label">Date of First Contact</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="firstContactDate" name="firstContactDate">{{claim.firstContactDate}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="inspectionDate" class="col-xs-4 col-sm-3 control-label">Date of Inspection</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="inspectionDate" name="inspectionDate">{{claim.inspectionDate}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="dueDate" class="col-xs-4 col-sm-3 control-label">Due Date</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="dueDate" name="dueDate">{{claim.dueDate}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="lossType" class="col-xs-4 col-sm-3 control-label">Type of Loss</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="lossType" name="lossType">{{claim.lossType}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="adjustmentType" class="col-xs-4 col-sm-3 control-label">Type of Adjustment</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="adjustmentType" name="adjustmentType">{{claim.adjustmentType}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="lossTotal" class="col-xs-4 col-sm-3 control-label">Total Loss (Urgent)</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <input type="checkbox" class="k-checkbox" disabled="disabled" data-ng-bind="claim.lossTotalUrgent" ng-model="claim.lossTotalUrgent"
+                               id="lossTotalUrgent" name="lossTotalUrgent" />
+                        <label for="lossTotalUrgent" class="k-checkbox-label"></label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="mouldClaim" class="col-xs-4 col-sm-3 control-label">Mould Claim</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <input type="checkbox" class="k-checkbox" disabled="disabled" data-ng-bind="claim.mouldClaim" ng-model="claim.mouldClaim"
+                               id="mouldClaim" name="mouldClaim" />
+                        <label for="mouldClaim" class="k-checkbox-label"></label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="manager" class="col-xs-4 col-sm-3 control-label">Assign Manager</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="manager" name="manager">{{claim.managerName}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="adjuster" class="col-xs-4 col-sm-3 control-label">Assign Adjuster</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="adjuster" name="adjuster">{{claim.adjusterName}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="branch" class="col-xs-4 col-sm-3 control-label">Assign Branch</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="branch" name="branch">{{claim.branch}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="lossDescription" class="col-xs-4 col-sm-3 control-label">Loss Description</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="lossDescription" name="lossDescription">{{claim.lossDescription}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="instruction" class="col-xs-4 col-sm-3 control-label">Instruction</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="instruction" name="instruction">{{claim.instruction}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="status" class="col-xs-4 col-sm-3 control-label">Status</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="status" name="status">{{claim.status}}</label>
+                </div>
+            </div>
+
+        </fieldset>
+    </div>
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Coverage Information</legend>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="vinNo" class="col-xs-4 col-sm-3 control-label">VIN #</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="vinNo" name="vinNo">{{claim.vinNo}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="deductible" class="col-xs-4 col-sm-3 control-label">Deductible</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="deductible" name="deductible">{{claim.deductible}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="windDeductible" class="col-xs-4 col-sm-3 control-label">Wind Deductible</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="windDeductible" name="windDeductible">{{claim.windDeductible}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="premium" class="col-xs-4 col-sm-3 control-label">Premium</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="premium" name="premium">{{claim.premium}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="building" class="col-xs-4 col-sm-3 control-label">Building</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="building" name="building">{{claim.building}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="subrogation" class="col-xs-4 col-sm-3 control-label">Subrogation</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="subrogation" name="subrogation">{{claim.subrogation}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="salvage" class="col-xs-4 col-sm-3 control-label">Salvage</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="salvage" name="salvage">{{claim.salvage}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="businessPersonalProperty" class="col-xs-4 col-sm-3 control-label">Business Personal Property</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="businessPersonalProperty" name="businessPersonalProperty">{{claim.businessPersonalProperty}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="contents" class="col-xs-4 col-sm-3 control-label">Contents</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="contents" name="contents">{{claim.contents}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="ale" class="col-xs-4 col-sm-3 control-label">ALE</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="ale" name="ale">{{claim.ale}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="detachedrivateStructures" class="col-xs-4 col-sm-3 control-label">Detached Private Structures</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="detachedPrivateStructures" name="detachedPrivateStructures">{{claim.detachedPrivateStructures}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="condominiumImprovements" class="col-xs-4 col-sm-3 control-label">Condominium Improvements / Betterents</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="condominiumImprovements" name="condominiumImprovements">{{claim.condominiumImprovements}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12 hidden">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="industrialHygenist" class="col-xs-4 col-sm-3 control-label">Industrial Hygenist</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="industrialHygenist" name="industrialHygenist">{{claim.industrialHygenist}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="adjustingFee" class="col-xs-4 col-sm-3 control-label">Adjusting Fee</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="adjustingFee" name="adjustingFee">{{claim.adjustingFee}}</label>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="policyEffectiveDate" class="col-xs-4 col-sm-3 control-label">Policy Effective Date</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="PolicyEffectiveDate" name="PolicyEffectiveDate">{{claim.PolicyEffectiveDate}}</label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="policyExpirationDate" class="col-xs-4 col-sm-3 control-label">Policy Expiration Date</label>
+                    <label class="col-xs-8 col-sm-9 control-label" id="PolicyExpirationDate" name="PolicyExpirationDate">{{claim.PolicyExpirationDate}}</label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Associated Documentation</legend>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="acknowledgementMail" class="col-xs-4 col-sm-3 control-label">Acknowledgement Mail</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <input type="checkbox" class="k-checkbox" disabled="disabled" data-ng-bind="claim.acknowledgementMail" ng-model="claim.acknowledgementMail"
+                               id="acknowledgementMail" name="acknowledgementMail" />
+                        <label for="acknowledgementMail" class="k-checkbox-label"></label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="lossNotice" class="col-xs-4 col-sm-3 control-label">Loss Notice</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <input type="checkbox" class="k-checkbox" disabled="disabled" data-ng-bind="claim.lossNotice" ng-model="claim.lossNotice"
+                               id="lossNotice" name="lossNotice" />
+                        <label for="lossNotice" class="k-checkbox-label"></label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+
+    <div class="col-xs-12 paddingTopBottom10">
+        <div kendo-tab-strip k-content-urls="[ null, null]" style="width: 98%;">
+            <!-- tab list -->
+            <ul>
+                <li class=" k-state-active">Notes & Tasks</li>
+                <li>Timelogs</li>
+                <li>Associated Photos</li>
+                <li>Associated Document</li>
+            </ul>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Manage Notes</legend>
+                    <div class="form-group">
+                        <div kendo-grid="claimNotesGrid" id="claimNotesGrid" options="claimNotesGridOptions">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Manage Timelogs</legend>
+                    <div class="form-group">
+                        <div kendo-grid="claimTimelogsGrid" id="claimTimelogsGrid" options="claimTimelogsGridOptions">
+                        </div>
+                        <br />
+                        <a ng-if="claim.claimId" href="#/newInvoice/{{claim.claimId}}_{{claim.claimNo}}" class="k-button pull-right">Create New Invoice</a>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Manage Photos</legend>
+                    <div class="form-group">
+                        <div class="hint">
+                            <span>You can only upload <strong>BMP</strong>, <strong>JPG</strong>, <strong>JPEG</strong>, <strong>PNG</strong> and <strong>TIFF</strong> files.</span>
+                            <span>Maximum allowed file size is <strong>4 MB</strong>.</span>
+                        </div>
+                        <input type="file" id="claimImages" name="claimFiles" kendo-upload k-options="imageUploadOptions" />
+                        <div class="form-group paddingTop20">
+                            <div kendo-grid="associatedPhotosForClaimGrid" id="associatedPhotosForClaimGrid" options="claimImagesGridOptions">
+                            </div>
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+            <div class="col-xs-12">
+                <fieldset>
+                    <legend>Manage Document</legend>
+                    <div class="form-group">
+                        <div class="hint">
+                            <span>You can only upload <strong>TXT</strong>, <strong>RTF</strong>, <strong>CSV</strong>, <strong>DOC / DOCX</strong>, <strong>XLS / XLSX</strong>, <strong>PPT / PPTX</strong> and <strong>PDF</strong> files.</span>
+                            <span>Maximum allowed file size is <strong>4 MB</strong>.</span>
+                        </div>
+                        <input type="file" id="claimDocuments" name="claimFiles" kendo-upload k-options="documentUploadOptions" />
+                    </div>
+                    <div class="form-group paddingTop20">
+                        <div kendo-grid="associatedDocumentsForClaimGrid" id="associatedDocumentsForClaimGrid" options="claimDocumentsGridOptions">
+                        </div>
+                    </div>
+                </fieldset>
+            </div>
+        </div>
+    </div>
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/claims" class="k-button">Back to Claims</a> &nbsp;
+            <input type="button" class="k-button" value="Send Email" disabled ng-click="SendEmail()" /> &nbsp;
+            <a href="#/newClaimNote/{{claim.claimId}}" class="k-button">Add Note / Task</a> &nbsp;
+            <a href="#/newTimelog/{{claim.claimId}}" class="k-button">Add Timelog</a> &nbsp;
+            <a href="#/editClaim/{{claim.claimId}}" class="k-button">Edit Details</a> &nbsp;
+            <a href="#/newClaim" class="k-button">Create New Claim</a>
+        </div>
+    </div>
+</section>

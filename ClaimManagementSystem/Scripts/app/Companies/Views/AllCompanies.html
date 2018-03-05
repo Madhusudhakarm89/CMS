@@ -1,0 +1,17 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage Companies</h1>
+    <a href="#/newCompany" class="k-button pull-right">Add New Company</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="companyGrid" id="companyGrid" options="companiesGridOptions">
+    </div>
+
+    <div id="window" class="hidden">
+        <input name='files' data-id='#=companyId#' id="files" type='file' kendo-upload k-select='onSelect'  />
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        <span class="status {{ validationClass }}">{{ validationMessage }} </span>
+    </div>
+</section>
