@@ -1,0 +1,101 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">View Timelog Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom40">
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Claim Information</legend>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">File #</label>
+                    <label class="col-xs-8 col-md-9 control-label text-left">
+                        {{timelog.fileNo}}
+                    </label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="claimNo" class="col-xs-4 col-md-3 control-label">Claim #</label>
+                    <div class="col-xs-8 col-md-9">
+                        <label id="claimNo" name="claimNo" class="form-control control-label">
+                            {{timelog.claimNo}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Company</label>
+                    <label class="col-xs-8 col-md-9 control-label text-left">
+                        {{timelog.companyName}}
+                    </label>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label fclass="col-xs-4 col-sm-3 control-label">Adjuster</label>
+                    <label class="col-xs-8 col-sm-9 control-label text-left">
+                        {{timelog.adjusterName}}
+                    </label>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-xs-12 paddingTopBottom10">
+        <fieldset>
+            <legend>Effort Details</legend>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="status" class="col-xs-4 col-sm-3 control-label">Service Item</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <label id="serviceItem" name="serviceItem" class="form-control control-label">
+                            {{timelog.serviceItemId}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="effortDate" class="col-xs-4 col-sm-3 control-label">Effort Date</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <label id="effortDate" name="effortDate" class="form-control control-label">
+                            {{timelog.taskDate}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12 paddingBottom5">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="quantity" class="col-xs-4 col-sm-3 control-label">Quantity</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <label id="quantity" name="quantity" class="form-control control-label">
+                            {{timelog.quantity}}
+                        </label>
+                    </div>
+                </div>
+                <div class="form-group col-xs-12 col-md-6">
+                    <label for="unit" class="col-xs-4 col-sm-3 control-label">Unit</label>
+                    <div class="col-xs-8 col-sm-9">
+                        <label id="unit" name="unit" class="form-control control-label">
+                            {{timelog.unit}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+            <div class="col-xs-12">
+                <div class="form-group col-xs-12 col-md-6">
+                    <label class="col-xs-4 col-md-3 control-label">Comment</label>
+                    <div class="col-xs-8 col-md-9">
+                        <label id="comment" name="comment" class="form-control control-label">
+                            {{timelog.comment}}
+                        </label>
+                    </div>
+                </div>
+            </div>
+        </fieldset>
+    </div>
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/claims" class="k-button">Back to Manage Claims</a> &nbsp;
+            <a href="#/viewClaim/{{timelog.claimId}}" class="k-button">Back to Claim</a> &nbsp;
+            <a href="#/timelogs/{{timelog.claimId}}" class="k-button">View all Timelogs</a> &nbsp;
+            <a href="#/editTimelog/{{timelog.timelogId}}" class="k-button">Edit Details</a> &nbsp;
+            <a href="#/newTimelog/{{timelog.claimId}}" class="k-button">Add Timelog</a>
+        </div>
+    </div>
+</section>

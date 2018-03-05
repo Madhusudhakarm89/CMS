@@ -1,0 +1,132 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A322A261-139A-4EE0-A566-22FBFECC4F1E}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.BusinessLibrary</RootNamespace>
+    <AssemblyName>CMS.BusinessLibrary</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - Mayank|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - Mayank\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AspNetUsersDocumnetMappingBusinessLayer.cs" />
+    <Compile Include="ClaimStatusBusinessLayer.cs" />
+    <Compile Include="ContactTypeBusinessLayer.cs" />
+    <Compile Include="FileNamingBusinessLayer.cs" />
+    <Compile Include="InvoiceDocumnetMappingBusinessLayer.cs" />
+    <Compile Include="ServiceCategoryBusinessLayer.cs" />
+    <Compile Include="ServiceItemBusinessLayer.cs" />
+    <Compile Include="SystemAlertsBusinessLayer.cs" />
+    <Compile Include="TaxSettingBusinessLayer.cs" />
+    <Compile Include="ClaimDocumentMappingBusinessLayer.cs" />
+    <Compile Include="ClaimBusinessLayer.cs" />
+    <Compile Include="AccountDocumentMappingBusinessLayer.cs" />
+    <Compile Include="ClaimNotesBusinessLayer.cs" />
+    <Compile Include="GlobalSearchBusinessLayer.cs" />
+    <Compile Include="InvoiceBusinessLayer.cs" />
+    <Compile Include="TimeLogUnitBusinessLayer.cs" />
+    <Compile Include="TypeOfLossBusinessLayer.cs" />
+    <Compile Include="UserBusinessLayer.cs" />
+    <Compile Include="ProvinceBusinessLayer.cs" />
+    <Compile Include="CountryBusinessLayer.cs" />
+    <Compile Include="CompanyBusinessLayer.cs" />
+    <Compile Include="ContactBusinessLayer.cs" />
+    <Compile Include="EntityModelMapping\EntityToViewModelMapper.cs" />
+    <Compile Include="EntityModelMapping\ViewModelToEntityMapper.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeLogBusinessLayer.cs" />
+    <Compile Include="UserProfileBusinessLayer.cs" />
+    <Compile Include="ViewModels\AlertViewModel.cs" />
+    <Compile Include="ViewModels\AspNetUsersDocumentViewModel.cs" />
+    <Compile Include="ViewModels\FileNameViewModel.cs" />
+    <Compile Include="ViewModels\InvoiceDocumentViewModel.cs" />
+    <Compile Include="ViewModels\TimeLogUnitViewModel.cs" />
+    <Compile Include="ViewModels\TypeOfLossViewModel.cs" />
+    <Compile Include="ViewModels\UserProfileViewModel.cs" />
+    <Compile Include="ViewModels\BaseViewModel.cs" />
+    <Compile Include="ViewModels\ClaimStatusViewModel.cs" />
+    <Compile Include="ViewModels\ContactTypeViewModel.cs" />
+    <Compile Include="ViewModels\ServiceCategoryViewModel.cs" />
+    <Compile Include="ViewModels\ServiceItemViewModel.cs" />
+    <Compile Include="ViewModels\TaxSettingViewModel.cs" />
+    <Compile Include="ViewModels\ClaimNotesViewModel.cs" />
+    <Compile Include="ViewModels\ClaimViewModel.cs" />
+    <Compile Include="ViewModels\ClaimDocumentViewModel.cs" />
+    <Compile Include="ViewModels\CompanyDocumentViewModel.cs" />
+    <Compile Include="ViewModels\CompanyViewModel.cs" />
+    <Compile Include="ViewModels\ContactViewModel.cs" />
+    <Compile Include="ViewModels\FilterParameterViewModel.cs" />
+    <Compile Include="ViewModels\GlobalSearchViewModel.cs" />
+    <Compile Include="ViewModels\InvoiceViewModel.cs" />
+    <Compile Include="ViewModels\UserViewModel.cs" />
+    <Compile Include="ViewModels\ProvinceViewModel.cs" />
+    <Compile Include="ViewModels\CountryViewModel.cs" />
+    <Compile Include="ViewModels\TimeLogViewModel.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\CMS.Entity\CMS.Entity.csproj">
+      <Project>{9c574f8f-fd01-44f4-b5a3-4b39a5fb13fd}</Project>
+      <Name>CMS.Entity</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Repository\CMS.Repository.csproj">
+      <Project>{7f0d195e-3e9a-41e5-98aa-254204f009a8}</Project>
+      <Name>CMS.Repository</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\CMS.Utilities\CMS.Utilities.csproj">
+      <Project>{158045be-5f43-4356-8fec-973aa7d07fae}</Project>
+      <Name>CMS.Utilities</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

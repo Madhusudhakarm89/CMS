@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{9C574F8F-FD01-44F4-B5A3-4B39A5FB13FD}</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>CMS.Entity</RootNamespace>
+    <AssemblyName>CMS.Entity</AssemblyName>
+    <TargetFrameworkVersion>v4.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug - Mayank|AnyCPU'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\Debug - Mayank\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FileNameCode.cs" />
+    <Compile Include="Invoice.cs" />
+    <Compile Include="Mapping_InvoiceDocument.cs" />
+    <Compile Include="Mapping_AspNetUsersDocument.cs" />
+    <Compile Include="Mapping_InvoiceTimelog.cs" />
+    <Compile Include="ServiceCategory.cs" />
+    <Compile Include="AspNetRole.cs" />
+    <Compile Include="AspNetUser.cs" />
+    <Compile Include="AspNetUserClaim.cs" />
+    <Compile Include="AspNetUserLogin.cs" />
+    <Compile Include="ClaimNote.cs" />
+    <Compile Include="CompanyType.cs" />
+    <Compile Include="ContactType.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="TimeLogUnit.cs" />
+    <Compile Include="TypeOfLoss.cs" />
+    <Compile Include="Status.cs" />
+    <Compile Include="Country.cs" />
+    <Compile Include="EmailTemplate.cs" />
+    <Compile Include="Province.cs" />
+    <Compile Include="ServiceItem.cs" />
+    <Compile Include="TaxSetting.cs" />
+    <Compile Include="TaxCategory.cs" />
+    <Compile Include="TimeLog.cs" />
+    <Compile Include="UserContactDetails.cs" />
+    <Compile Include="Account.cs" />
+    <Compile Include="Alert.cs" />
+    <Compile Include="Claim.cs" />
+    <Compile Include="ClaimDetail.cs" />
+    <Compile Include="ClaimServiceTimeLog.cs" />
+    <Compile Include="Contact.cs" />
+    <Compile Include="Mapping_AccountDocument.cs" />
+    <Compile Include="Mapping_AccountUserGroup.cs" />
+    <Compile Include="Mapping_ClaimDocument.cs" />
+    <Compile Include="Mapping_ClaimUserGroup.cs" />
+    <Compile Include="Mapping_ContactDocument.cs" />
+    <Compile Include="Mapping_ContactUserGroup.cs" />
+    <Compile Include="Mapping_ProviceTaxRates.cs" />
+    <Compile Include="Reminder.cs" />
+    <Compile Include="UserGroup.cs" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

@@ -1,0 +1,87 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Edit Note / Task Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom20">
+    <form class="form-horizontal" role="form" novalidate name="claimNoteForm" id="claimNoteForm" kendo-validator="validator">
+        <div class="col-xs-12 paddingTopBottom10">
+            <fieldset>
+                <legend>Note / Task Information</legend>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="type" class="col-xs-3 col-sm-2 control-label">Type</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input type="radio" class="k-radio" id="descriptionTypeNote" name="descriptionType" value="Note" ng-model="claimNote.type" />
+                            <label for="descriptionTypeNote" class="k-radio-label">&nbsp;Note</label> &nbsp; &nbsp; &nbsp;
+                            <input type="radio" class="k-radio" id="descriptionTypeTask" name="descriptionType" value="Task" ng-model="claimNote.type" />
+                            <label for="descriptionTypeTask" class="k-radio-label">&nbsp;Task</label>
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="createdDate" class="col-xs-3 col-sm-2 control-label">Created Date</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input id="createdDate" name="createdDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claimNote.createdDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12">
+                        <label for="noteTitle" class="col-xs-2 col-sm-1 control-label">{{claimNote.type}} Title</label>
+                        <div class="col-xs-10 col-sm-11">
+                            <input id="noteTitle" name="noteTitle" class="form-control k-input" placeholder="Title of the note / task.."
+                                    ng-model="claimNote.title" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12">
+                        <label for="noteDescriptionEditor" class="col-xs-2 col-sm-1 control-label">{{claimNote.type}} Description</label>
+                        <div class="col-xs-10 col-sm-11">
+                            <textarea kendo-editor id="noteDescriptionEditor" name="noteDescriptionEditor" class="form-control" placeholder="Please write your note / task description here.."
+                                      rows="3" k-ng-model="claimNote.description" required></textarea>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12" ng-if="claimNote.type === 'Task'">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="assignedTo" class="col-xs-3 col-sm-2 control-label">Assigned To</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input id="assignedTo" name="assignedTo" class="form-control" kendo-auto-complete
+                                   k-ng-model="claimNote.assignedToUser" k-options="userOptions" required />
+                        </div>
+                    </div>
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="taskDueDate" class="col-xs-3 col-sm-2 control-label">Due Date</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input id="taskEndDate" name="taskDueDate" kendo-date-picker class="form-control" style="width: 30%" placeholder="MM/DD/YYYY"
+                                   ng-model="claimNote.taskEndDate" k-format="'MM/dd/yyyy'" k-parse-formats="['MM/dd/yyyy']" required />
+                        </div>
+                    </div>
+                </div>
+                <div class="col-xs-12">
+                    <div class="form-group col-xs-12 col-md-6">
+                        <label for="sendEmail" class="col-xs-3 col-sm-2 control-label">Send Mail</label>
+                        <div class="col-xs-9 col-sm-10">
+                            <input type="checkbox" class="k-checkbox" data-ng-bind="claimNote.sendEmail" ng-model="claimNote.sendEmail"
+                                   id="sendEmail" name="sendEmail" />
+                            <label for="sendEmail" class="k-checkbox-label"></label>
+                        </div>
+                    </div>
+                </div>
+            </fieldset>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 text-right">
+                <a href="#/claims" class="k-button">Back to Manage Claims</a> &nbsp;
+                <a href="#/viewClaim/{{claim.claimId}}" class="k-button">Back to Claim</a> &nbsp;
+                <a href="#/claimNotes/{{claim.claimId}}" class="k-button">View all Notes / Tasks</a> &nbsp;
+                <input type="button" class="k-button" value="Reset" ng-click="ResetClaimNote()" /> &nbsp;
+                <input type="submit" class="k-button k-primary" value="Save" ng-click="UpdateClaimNote($event)" />
+            </div>
+        </div>
+        <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+            {{ message }}
+        </div>
+    </form>
+</section>

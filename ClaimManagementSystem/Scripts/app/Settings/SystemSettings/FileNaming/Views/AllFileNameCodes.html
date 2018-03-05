@@ -1,0 +1,13 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage File Naming Conventions</h1>
+    <a href="#/newFileNameCode" class="k-button pull-right">Add New Naming Convention</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="fileNamingGrid" id="fileNamingGrid" options="fileNamingGridOptions">
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

@@ -1,0 +1,13 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage System Alerts</h1>
+    <a href="#/newsystemalerts" class="k-button pull-right">Create System Alerts</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="systemAlertsGrid" id="systemAlertsGrid" options="systemAlertsGridOptions">
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

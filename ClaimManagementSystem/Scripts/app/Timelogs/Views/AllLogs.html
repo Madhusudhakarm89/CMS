@@ -1,0 +1,17 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage Timelogs for <a href="#/viewClaim/{{claim.claimId}}">{{claim.claimNo}}</a></h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="timelogGrid" id="timelogGrid" options="timelogGridOptions">
+    </div>
+    <br />
+    <div class="paddingBottom10 text-right">
+        <a href="#/claims" class="k-button">Back to Manage Claims</a> &nbsp;
+        <a href="#/viewClaim/{{claim.claimId}}" class="k-button">View Claim</a> &nbsp;
+        <a href="#/newTimelog/{{claim.claimId}}" class="k-button">Add New Timelog</a>
+    </div>
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

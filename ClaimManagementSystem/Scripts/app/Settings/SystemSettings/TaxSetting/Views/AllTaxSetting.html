@@ -1,0 +1,14 @@
+﻿
+<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage Tax Settings</h1>
+    <a href="#/newTaxSetting" class="k-button pull-right">Add New Tax Setting</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="taxSettingGrid" id="taxSettingGrid" options="taxSettingGridOptions">
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

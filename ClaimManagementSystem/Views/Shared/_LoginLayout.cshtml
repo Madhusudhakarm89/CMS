@@ -1,0 +1,130 @@
+﻿<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+    <title>Welcome to Mobiclaims</title>
+    <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet">
+    <link href="~/Content/Site/StyleSheets/master.css" rel="stylesheet" media="screen" charset="utf-8" />
+    @Styles.Render("~/Content/kendo/css")
+    @Styles.Render("~/Content/css")
+    @Scripts.Render("~/bundles/modernizr")
+
+    @Scripts.Render("~/bundles/jquery")
+    @Scripts.Render("~/bundles/jqueryval")
+    @Scripts.Render("~/bundles/kendo")
+    <script src="@Url.Content("~/Scripts/master.js")" type="text/javascript"></script>
+</head>
+
+<body>
+    <script type="text/javascript">
+        SetApplicationBaseURL('@String.Format("{0}{1}", HttpContext.Current.Request.Url.GetLeftPart(UriPartial.Authority), HttpContext.Current.Request.ApplicationPath)', '@ViewContext.RouteData.DataTokens["Area"]', '@ViewContext.RouteData.Values["Controller"].ToString()', '@ViewContext.RouteData.Values["Action"].ToString()', '', '@ViewContext.RouteData.Values["Id"]');
+    </script>
+<div id="page-wrapper">
+    <header>
+        <div class="logo">
+            <a href="/"><img src="~/Content/Site/Images/Mobiclaims-logo.png" alt="MobiCalim"/></a>
+        </div>
+        <div class="client-login">
+            Login
+            <div class="login-form">
+                @RenderBody()
+            </div>
+        </div>
+    </header>
+    <div class="hero-banner">
+        <div class="hero-image">
+            <img src="~/Content/Site/Images/hero-banner.jpg" alt=""/>
+        </div>
+        <div class="hero-content">
+            <h2>CLAIMS MANAGEMENT SYSTEM
+            </h2>
+            <p>
+                A powerful, reliable and productive platform for Property Adjusters to efficiently manage insurance claims, contacts, tasks, files, invoices and reports from virtually anywhere, at any time.
+            </p>
+
+        </div>
+    </div>
+    <div class="features">
+        <div class="block">
+            <div class="block-header">manage customer <br>information
+            </div>
+            <ul class="icons">
+                <li><img src="~/Content/Site/Images/icon-claims.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-insurance.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-contacts.png" alt=""/></li>
+            </ul>
+            <ul class="features-list">
+                <li>Claims</li>
+                <li>Companies (Insurance, Brokerages)</li>
+                <li>Contacts</li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="block-header">streamline <br>operations
+            </div>
+            <ul class="icons">
+                <li><img src="~/Content/Site/Images/icon-timelogs.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-invoices.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-documents.png" alt=""/></li>
+            </ul>
+            <ul class="features-list">
+                <li>Create Timelogs</li>
+                <li>Create Invoices</li>
+                <li>Manage Documents & Photos</li>
+            </ul>
+        </div>
+        <div class="block enhance">
+            <div class="block-header">enhance <br>productivity
+            </div>
+            <ul class="icons">
+                <li><img src="~/Content/Site/Images/icon-tasks.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-alerts.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-dashboards.png" alt=""/></li>
+            </ul>
+            <ul class="features-list">
+                <li>Create Tasks & Notes</li>
+                <li>Get Alerts</li>
+                <li>Informative Dashboards</li>
+            </ul>
+        </div>
+        <div class="block">
+            <div class="block-header">easy <br>access
+            </div>
+            <ul class="icons">
+                <li><img src="~/Content/Site/Images/icon-access.png" alt=""/></li>
+                <li><img src="~/Content/Site/Images/icon-anywhere.png" alt=""/></li>
+            </ul>
+            <ul class="features-list">
+                <li>Client Access Portal</li>
+                <li>Access anytime, anywhere</li>
+            </ul>
+        </div>
+    </div>
+    <div class="contac-btn">
+        <a href="#" onclick="window.open('mailto:info@dsbclaims.com', '_blank')" class=" contact-link">Contact us</a>
+</div>
+</div>
+<footer>
+    <div class="copyright">
+        Copyright © 20016 mobiclaim.com | Powered by <a href="#" onclick="window.open('http://www.dsbclaims.com ','_blank')">DSB Claims Inc</a>
+</div>
+</footer>
+<script type="text/javascript">
+    $('.client-login a')
+        .on('click',
+            function() {
+                $('.login-form').show();
+            });
+    $('.login-btn')
+        .on('click',
+            function() {
+                $('.login-form').hide();
+            });
+
+</script>
+@Scripts.Render("~/bundles/bootstrap")
+@RenderSection("Scripts", required: false)
+</body>
+
+</html>

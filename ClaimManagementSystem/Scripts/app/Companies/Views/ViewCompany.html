@@ -1,0 +1,118 @@
+﻿
+<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">View Company Details</h1>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingBottom40">
+    <fieldset>
+        <legend>Primary Information</legend>
+        <div class="col-xs-12">
+            <div class=" form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Company Name</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="companyName" name="companyName">{{company.companyName}}</label>
+            </div>
+
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Company Type</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="type" name="type">{{company.type}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Default Adjuster</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="userName" name="userName">{{company.userName}}</label>
+            </div>
+
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Key Contact</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="keyContact" name="keyContact">{{company.keyContact}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Email</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="contactEmailId" name="contactEmailId">{{company.contactEmailId}}</label>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Phone</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="phone" name="phone">{{company.phone}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Alternate Phone</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="alternatePhone" name="alternatePhone">{{company.alternatePhone}}</label>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Fax</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="fax" name="fax">{{company.fax}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Extension</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="Extension" name="Extension">{{company.Extension}}</label>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Unit</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="unit" name="unit">{{company.unit}}</label>
+            </div>
+        </div>
+
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Status</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="status" name="status">{{company.status}}</label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Address Information</legend>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Street</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="companyName" name="street">{{company.street}}</label>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">City</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="city" name="city">{{company.city}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Country</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="countryName" name="countryName">{{company.countryName}}</label>
+            </div>
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">State</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="provinceName" name="provinceName">{{company.provinceName}}</label>
+            </div>
+        </div>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12 col-md-6">
+                <label class="col-xs-3 col-lg-2 control-label">Postal Code</label>
+                <label class="col-xs-9 col-lg-10 control-label" id="postal" name="postal">{{company.postal}}</label>
+            </div>
+        </div>
+    </fieldset>
+    <fieldset>
+        <legend>Associated Documents</legend>
+        <div class="col-xs-12">
+            <div class="form-group col-xs-12">
+                <input type="file" id="files" name="files" />
+            </div>
+            <div class="form-group col-xs-12">
+                <div kendo-grid="downloadCompanyDocumentsGrid" id="downloadCompanyDocumentsGrid" options="downloadCompaniesDocumentsGridOptions">
+                </div>
+            </div>
+        </div>
+    </fieldset>
+    <div class="col-xs-12">
+        <div class="form-group col-xs-12 text-right">
+            <a href="#/companies" class="k-button">Back to Companies</a> &nbsp;
+            <a href="#/newContact" class="k-button">Add Contact</a> &nbsp;
+            <a href="#/newCompany" class="k-button">Add New Company</a> &nbsp;
+            <a href="#/editCompany/{{company.companyId}}" class="k-button">Edit Details</a>
+        </div>
+    </div>
+</section>

@@ -1,0 +1,256 @@
+/*
+  Theme Name: MobiClaims
+  Theme URL: -
+  Authors: Parveen Verma and Veeren
+  Author URI: - http://veeren.in
+  Author Tel: - +91 991 0414 273
+  Description: Onepage HTML Landing Page
+  Version: 1.0
+*/
+/* Table of contents
+---------------------------------------------------------------------------------------
+
+0. Global Styles
+1. page
+
+*/
+/* global styles
+---------------------------------------------------------------------------------------*/
+html{
+  font-size: 10px;
+}
+body {
+  overflow-x: hidden;
+  padding: 0;
+  margin: 0;
+  font-family: 'Montserrat', sans-serif;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: 300;
+  text-align: center;
+}
+#page-wrapper {
+  padding: 0;
+  width: 1170px;
+  margin: 0 auto;
+}
+h2 {}
+p {}
+nav {}
+a {outline: none; color: inherit; text-decoration: inherit;}
+.clear {
+    clear:both;
+}
+/* header
+---------------------------------------------------------------------------------------*/
+.login-form,
+.hero-content {
+  /*display: none;*/
+}
+
+
+header {
+    height: 10.5rem;
+    margin-bottom: 2.5rem;
+}
+.logo {
+    padding-top: 5rem;
+    display: inline-block;
+}
+.client-login {
+    float: right;
+    padding-top: 5rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    text-transform: uppercase;
+    position: relative;
+}
+.client-login a{
+  color: #0080ff;
+  line-height: 4rem;
+}
+.login-form {
+    position: absolute;
+    width: 32rem;
+    right: 0;
+    background: #000;
+    color: #fff;
+    padding: 2.5rem;
+    z-index: 100;
+    display: block;
+}
+.login-form label {
+    display: block;
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+}
+.login-form input:focus{
+    outline: none;
+}
+.login-form input[type="text"] {
+    width: 100%;
+    height: 4rem;
+    line-height: 4rem;
+    margin-bottom: 2rem;
+    border: none;
+    border-bottom: 0.2rem solid #fff;
+    background: transparent;
+    color: #fff;
+}
+.form-options {
+    padding-bottom: 2rem;
+}
+.remember {
+    display: inline-block;
+    width: 15rem;
+}
+.login-form input[type="checkbox"] {
+    margin: 0.2rem 1rem 0 0;
+    float: left;
+}
+a.link-forgot-password {
+    float: right;
+    color: #fff;
+    font-size: 1.2rem;
+    line-height: 2.3rem;
+}
+.login-form input[type="button"] {
+    width: 100%;
+    height: 4rem;
+    background: #fff;
+    border: none;
+    font-size: 2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+/* hero banner
+---------------------------------------------------------------------------------------*/
+.hero-banner {
+    position: relative;
+    padding-bottom: 5.2rem;
+    margin-bottom: 2.5rem;
+}
+.hero-content {
+    position: absolute;
+    top: 0;
+    color: #fff;
+    padding: 5rem;
+    width: 40%;
+}
+.hero-content h2 {
+    font-size: 3rem;
+    font-weight: bold;
+    padding-top: 6rem;
+    text-align: left;
+}
+.hero-content p {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+    padding-bottom: 2rem;
+}
+a.hero-link {
+    padding: 1rem 6rem 1rem 3rem;
+    background: #fff url('../img/btn-arrows.png');
+    background-repeat: no-repeat;
+    background-position: 18.5rem 1.5rem;
+    color: #000;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+.hero-banner::after {
+    content: "";
+    background: url('../img/hero-banner-shadow.png');
+    background-repeat: no-repeat;
+    background-position: center center;
+    width: 100%;
+    height: 5.3rem;
+    position: absolute;
+    bottom: 0.1rem;
+}
+
+/* features
+---------------------------------------------------------------------------------------*/
+.features{
+  padding-bottom: 5.2rem;
+}
+.block {
+    border-right: 1px solid #e5e5e5;
+    display: inline-block;
+    min-width: 18%;
+    vertical-align: top;
+    padding: 0 3.2rem;
+}
+.block.enhance{
+  /*width: 28.5rem;*/
+}
+.block:last-child{
+  border-right: 0;
+}
+.block-header {
+    font-size: 1.2rem;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+ul.icons {
+    margin: 0;
+    padding: 3rem 0;
+    width: 100%;
+    float: left;
+    list-style-type: none;
+}
+ul.icons li {
+    margin: 0 1.5rem 0 0;
+    padding: 0;
+    float: left;
+}
+
+ul.icons li:last-child{
+  margin-right: 0;
+}
+ul.features-list {
+    padding: 0;
+    margin: 0;
+    list-style-type: none;
+    font-size: 1.2rem;
+}
+
+/* footer
+---------------------------------------------------------------------------------------*/
+.contac-btn{
+  width: 100%;
+  display: block;
+  text-align: center;
+  float: left;
+  padding-bottom: 5.2rem;
+}
+a.contact-link {
+    padding: 1rem 6rem 1rem 3rem;
+    background: #000 url(../img/btn-arrows.png);
+    background-repeat: no-repeat;
+    background-position: 15.5rem -3.3rem;
+    color: #fff;
+    text-transform: uppercase;
+    font-size: 1.4rem;
+    font-weight: bold;
+    display: inline-block;
+}
+footer {
+    width: 100%;
+    float: left;
+    text-align: center;
+    background: #000;
+    line-height: 9rem;
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    color: #999999;
+}
+span.underline {
+    text-decoration: underline;
+}

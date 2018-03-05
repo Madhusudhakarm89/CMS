@@ -1,0 +1,7 @@
+G:\TFS_New\CMSDataBase\bin\Debug\CMSDataBase.dacpac
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\Model.xml
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\refactor.xml
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\postdeploy.sql
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\predeploy.sql
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\CMSDataBase.dll
+G:\TFS_New\CMSDataBase\obj\Debug - Mayank\CMSDataBase.pdb

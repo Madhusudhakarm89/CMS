@@ -1,0 +1,44 @@
+﻿@model ClaimManagementSystem.Models.EmailViewModel
+
+@{
+    ViewBag.Title = "GenerateIncoicePdf";
+    Layout = "~/Views/Shared/_CAPLayout.cshtml";
+}
+
+
+<!DOCTYPE html>
+<html>
+<head>
+</head>
+<body>
+    <div>
+
+        <div class="col-xs-12">
+            @{
+                var imagePath = @Model.CallbackUrl;
+            }
+            <section>
+                <div class="col-xs-12 col-sm-12">
+                    <table>
+                        <tr>
+                            <td class="col-xs-10 col-sm-6"><img src=@imagePath alt="DSB Claims" width="280px" height="70px" /></td>
+                            <td class="col-xs-3 col-sm-3 right top">
+                                <div>
+                                    DSB Claims Solutions
+                                    204 Main Street North
+                                    <label>Brampton, ON L6V 1P1</label><
+                                    <label>Phone: 905 915 4683</label><br />
+                                    <label>Fax: 905 915 4685</label>
+                                </div>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </section>
+        </div>
+
+
+    </div>
+</body>
+</html>
+

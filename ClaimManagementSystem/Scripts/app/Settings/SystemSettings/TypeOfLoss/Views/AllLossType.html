@@ -1,0 +1,13 @@
+﻿<div class="col-xs-12">
+    <h1 class="PageHeader1 paddingBottom10">Manage Loss Type</h1>
+    <a href="#/newLossType" class="k-button pull-right">Add New Loss Type</a>
+</div>
+<br clear="all">
+<section class="col-xs-12 paddingTopBottom10">
+    <div kendo-grid="lossTypeGrid" id="lossTypeGrid" options="lossTypeGridOptions">
+    </div>
+    <br />
+    <div class="col-xs-12 alert" ng-if="isSuccess != null" ng-class="isSuccess ? 'alert-success' : 'alert-danger'">
+        {{ message }}
+    </div>
+</section>

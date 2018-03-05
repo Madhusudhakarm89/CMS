@@ -1,0 +1,4 @@
+G:\TFS_New\CMS.Entity\bin\Debug - Mayank\CMS.Entity.dll
+G:\TFS_New\CMS.Entity\bin\Debug - Mayank\CMS.Entity.pdb
+G:\TFS_New\CMS.Entity\obj\Debug - Mayank\CMS.Entity.dll
+G:\TFS_New\CMS.Entity\obj\Debug - Mayank\CMS.Entity.pdb
