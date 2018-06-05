@@ -1,0 +1,216 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<Project DefaultTargets="ReleaseBuild" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <SolutionRoot Condition="'$(SolutionRoot)' == ''">$([System.IO.Path]::GetFullPath('$(MSBuildProjectDirectory)\..'))</SolutionRoot>
+    <SolutionDir Condition="$(SolutionDir) == '' Or $(SolutionDir) == '*Undefined*'">$(SolutionRoot)</SolutionDir>
+    <MSBuildExtensionsTasksPath>$(SolutionRoot)\packages\MSBuild.Extension.Pack.1.2.0\lib\net35\</MSBuildExtensionsTasksPath>
+    <MSBuildCommunityTasksPath>$(SolutionRoot)\packages\MSBuildTasks.1.4.0.61\tools\</MSBuildCommunityTasksPath>
+    <DropLocation>$(SolutionRoot)\DesktopBuildDrop</DropLocation>
+    <DropDir>$(DropLocation)</DropDir>
+    <IsDesktopBuild Condition="'$(IsDesktopBuild)' == ''">true</IsDesktopBuild>
+    <Configuration Condition="'$(Configuration)' == ''">Release</Configuration>
+    <Platform Condition="'$(Platform)' == ''">Any CPU</Platform>
+    <TargetFrameworkVersion Condition="'$(TargetFrameworkVersion)' == ''">v2.0</TargetFrameworkVersion>
+    <TargetFrameworkVersionFour Condition="'$(TargetFrameworkVersionFour)' == ''">v4.0</TargetFrameworkVersionFour>
+  </PropertyGroup>
+
+  <UsingTask AssemblyFile="$(MSBuildExtensionsTasksPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.FileSystem.File"/>
+  <UsingTask AssemblyFile="$(MSBuildExtensionsTasksPath)\MSBuild.ExtensionPack.dll" TaskName="MSBuild.ExtensionPack.Framework.AssemblyInfo" />
+  <UsingTask AssemblyFile="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Version" />
+  <UsingTask AssemblyFile="$(MSBuildCommunityTasksPath)\MSBuild.Community.Tasks.dll" TaskName="MSBuild.Community.Tasks.Zip" />
+
+  <ItemGroup>
+    <SolutionToBuild Include="$(SolutionRoot)/ClaimManagementSystem.sln">
+      <Targets></Targets>
+      <Properties></Properties>
+    </SolutionToBuild>
+   
+   
+   
+   <ProjectToBuild Include="$(SolutionRoot)/ClaimManagementSystem/ClaimManagementSystem.csproj;
+   $(SolutionRoot)/CMS.BusinessLibrary/CMS.BusinessLibrary.csproj;
+   $(SolutionRoot)/CMS.Entity/CMS.Entity.csproj;
+   $(SolutionRoot)/CMS.Repository/CMS.Repository.csproj;
+   $(SolutionRoot)/CMS.Utilities/CMS.Utilities.csproj;
+   $(SolutionRoot)/ClaimManagementSystem.Tests/CMS.Tests.csproj;
+
+    <Targets></Targets>
+     <Properties></Properties>
+   </ProjectToBuild>
+<ProjectToPublish Include="$(SolutionRoot)/ClaimManagementSystem/ClaimManagementSystem.csproj">
+    <Targets></Targets>
+ <Properties></Properties>
+ </ProjectToPublish> 
+  </ItemGroup>
+
+  <Target Name="PrintPaths" DependsOnTargets="SetupVersionInfo">
+    <Message Text="MSBuildExtensionsPath   : $(MSBuildExtensionsPath)    " />
+    <Message Text="MSBuildProjectDirectory : $(MSBuildProjectDirectory)  " />
+    <Message Text="SolutionRoot            : $(SolutionRoot)             " />
+    <Message Text="IsDesktopBuild          : $(IsDesktopBuild)           " />
+    <Message Text="MSBuildProjectDirectory : $(MSBuildProjectDirectory)  " />
+    <Message Text="VersionNumber           : $(VersionNumber)            " />
+    <Message Text="VersionName             : $(VersionName)              " />
+    <Message Text="Configuration           : $(Configuration)|$(Platform)" />
+  </Target>
+
+  <Target Name="BeforeCompile" DependsOnTargets="setupDropLoc;SetupVersionInfo" >    
+    <CallTarget Targets="PrintPaths" />
+    <Message Text="BeforeCompile Drop location: $(DropLocation) and build number: $(VersionNumber) DropPath:$(DropPath)" />
+    <CallTarget Targets="AssemblyVersion" />
+  </Target>
+
+  <Target Name="Compile" DependsOnTargets="BeforeCompile">
+  <MSBuild Projects="@(ProjectToBuild)" Properties="Configuration=$(Configuration);TargetFrameworkVersionFour=$(TargetFrameworkVersionFour);IsDesktopBuild=true" Targets="Build" />
+  <MSBuild Projects="@(SolutionToBuild)" Properties="Configuration=$(Configuration);Platform=$(Platform);TargetFrameworkVersion=$(TargetFrameworkVersion);IsDesktopBuild=true" Targets="Build" />    
+    <MSBuild Projects="@(ProjectToPublish)" Properties="TargetFrameworkVersionFour=$(TargetFrameworkVersionFour);IsDesktopBuild=true;Configuration=Release;Platform=AnyCPU;OutDir=$(SolutionRoot)\PublishedWeb\ClaimManagementSystem\bin\;WebProjectOutputDir=$(SolutionRoot)\PublishedWeb\ClaimManagementSystem\"/>
+  </Target> 
+
+  <Target Name="Clean">
+    <MSBuild Projects="@(SolutionToBuild)" Properties="Configuration=$(Configuration);Platform=$(Platform)" Targets="Clean" />
+  </Target>
+
+  <Target Name="setupDropLoc" DependsOnTargets="SetupVersionInfo">
+    <PropertyGroup>
+      <DropPath Condition=" '$(VersionNumber)' != '' ">$(DropLocation)\$(VersionNumber)\CMS</DropPath>
+      <DropPath Condition=" '$(VersionNumber)' == '' ">$(DropLocation)\CMS</DropPath>
+    </PropertyGroup>
+    <MakeDir Directories="$(DropPath)" Condition="!Exists('$(DropPath)')" />
+  </Target>
+
+  <Target Name="PackageBinaries" DependsOnTargets="setupDropLoc" >
+    <Message Text="PackageBinaries Drop location: $(DropLocation) and build number: $(VersionNumber) DropPath:$(DropPath)" />
+    <Message Text="BinariesRoot *************************************************************************"/>
+    <MakeDir Directories="$(DropPath)" Condition="!Exists('$(DropPath)')" />
+    <CallTarget Targets="CopyFilesToPackage" />
+    <CallTarget Targets="UpdateVersionNumbersInBatFiles" />
+    <CallTarget Targets="PackageIntoZipFiles" />
+  </Target>
+
+  <Target Name="ReleaseBuild" DependsOnTargets="SetUpBuildNumber;Clean; Compile; PackageBinaries" />
+
+  <Target Name="UpdateVersionNumbersInBatFiles">
+    <PropertyGroup>
+      <PackageDir>$(DropDir)\$(VersionNumber)\TIC</PackageDir>
+      <ReleaseDir>$(DropDir)\$(VersionNumber)\TIC\Release</ReleaseDir>
+    </PropertyGroup>
+    <ItemGroup>
+      
+    </ItemGroup>
+
+    <Message Text="Update version numbers in .bat-files" />
+    <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="ASCII"  RegexPattern="SET VERNo=.*" Replacement="SET VERNo=$(VersionNumber)" Files="@(StandaloneBatFile)"/>
+    <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="ASCII"  RegexPattern="echo     CMS Version: .*" Replacement="echo     STIC Version: $(VersionNumber)" Files="@(TicStartBatFile)"/>
+    <MSBuild.ExtensionPack.FileSystem.File TaskAction="Replace" TextEncoding="ASCII"  RegexPattern="SET INSTALLFILE=.*" Replacement="SET INSTALLFILE=STIC_InstallPackage_$(VersionNumber).zip" Files="@(SticStartInstallBatFile)"/>
+
+  </Target>
+
+  <Target Name="CopyFilesToPackage">
+    <PropertyGroup>
+      <PackageDir>$(DropDir)\$(VersionNumber)\CMS</PackageDir>
+      <ReleaseDir>$(DropDir)\$(VersionNumber)\CMS\Release</ReleaseDir>
+    </PropertyGroup>
+    
+    <ItemGroup>
+     
+    </ItemGroup>
+
+    
+  </Target>
+
+  <Target Name="PackageIntoZipFiles">
+    <PropertyGroup>
+      <PackageDir>$(DropDir)\$(VersionNumber)\CMS</PackageDir>
+      <ReleaseDir>$(DropDir)\$(VersionNumber)\CMS\Release</ReleaseDir>
+    </PropertyGroup>
+    <Message Text="Creating directories if needed" />
+    <MakeDir Directories="$(PackageDir)" Condition="!Exists('$(PackageDir)')" />
+    <MakeDir Directories="$(ReleaseDir)" Condition="!Exists('$(ReleaseDir)')" />
+
+   
+
+    <Copy SourceFiles="@(ReleaseBatFiles)" DestinationFolder="$(ReleaseDir)" />
+    
+    
+
+    <Message Text="Creating zip-files" />
+
+    <MSBuild.Community.Tasks.Zip Files="@(InstallPackageFilesToZip)"
+          WorkingDirectory="$(PackageDir)\InstallPackage"
+          ZipFileName="$(ReleaseDir)\STIC_InstallPackage_$(VersionNumber).zip" />
+
+    <MSBuild.Community.Tasks.Zip Files="@(SticInstallFilesToZip)" 
+          WorkingDirectory="$(ReleaseDir)"
+          ZipFileName="$(ReleaseDir)\STIC_Install_$(VersionNumber).zip" />
+
+    <Message Text="Tidying up" />
+    
+    <Delete Files="@(FilesToDelete)" TreatErrorsAsWarnings="true" />
+  </Target>
+
+  <Target Name="AssemblyVersion" DependsOnTargets="SetupVersionInfo">
+    <ItemGroup>
+      <AssemblyInfoFiles Include="$(MSBuildProjectDirectory)\GlobalAssemblyInfo.cs" />
+    </ItemGroup>
+
+    <AssemblyInfo AssemblyInfoFiles="@(AssemblyInfoFiles)"
+                  AssemblyMajorVersion="$(MajorVersion)"
+                  AssemblyMinorVersion="$(MinorVersion)"
+                  AssemblyBuildNumber="$(BuildVersion)"
+                  AssemblyRevision="$(RevisionVersion)"
+                  AssemblyFileMajorVersion="$(MajorVersion)"
+                  AssemblyFileMinorVersion="$(MinorVersion)"
+                  AssemblyFileBuildNumber="$(FileBuildVersion)"
+                  AssemblyFileRevision="$(FileRevisionVersion)">
+    </AssemblyInfo>
+  <!--   <CallTarget Targets="AssemblyVersionWpst;" /> -->
+  </Target>
+
+<!--   Removed since WPST is no longer part of STIC buld process
+<Target Name="AssemblyVersionWpst" DependsOnTargets="SetupVersionInfo">
+    <MSBuild Targets="RestorePackages;AssemblyVersion" Projects="$(SolutionDir)\WPST\Build\TCBuild.proj" Properties="SolutionDir=$(SolutionDir)\WPST;SolutionRoot=$(SolutionDir)\WPST" />
+  </Target>
+  -->
+
+  <Target Name="SetupVersionInfo">
+    <Version VersionFile="$(SolutionDir)\VERSION.TXT" BuildType="None" StartDate="1 Jan 2000">
+      <Output TaskParameter="Major" PropertyName="MajorVersion" />
+      <Output TaskParameter="Minor" PropertyName="MinorVersion" />
+      <Output TaskParameter="Build" PropertyName="BuildVersion" />
+      <Output TaskParameter="Revision" PropertyName="RevisionVersion" />
+    </Version>
+   
+    <PropertyGroup>
+      <FileBuildVersion>$(BuildVersion)</FileBuildVersion>
+      <FileRevisionVersion Condition="'$(BUILD_NUMBER)' != '' ">$(BUILD_NUMBER)</FileRevisionVersion>
+      <FileRevisionVersion Condition="'$(FileRevisionVersion)' == ''">$(RevisionVersion)</FileRevisionVersion>
+    </PropertyGroup>
+  
+    
+<!--     <GenerateWpstBuildNumberAndRevision_Inline>
+      <Output PropertyName="RevisionVersion" TaskParameter="Revision" />
+      <Output PropertyName="BuildVersion" TaskParameter="BuildNumber" />
+    </GenerateWpstBuildNumberAndRevision_Inline>
+ -->
+   <PropertyGroup>
+      <VersionNumber>$(MajorVersion).$(MinorVersion).$(FileBuildVersion).$(FileRevisionVersion)</VersionNumber>
+      <VersionName>STIC $(VersionNumber)</VersionName>
+    </PropertyGroup>
+
+    <Message Text="VERSION: $(MajorVersion).$(MinorVersion).$(BuildVersion).$(RevisionVersion)" />
+    <Message Text="FILEVERSION: $(MajorVersion).$(MinorVersion).$(FileBuildVersion).$(FileRevisionVersion)" />
+  </Target>
+
+<Target Name="SetUpBuildNumber">
+  
+   <Version VersionFile="$(SolutionDir)\VERSION.TXT" BuildType="None" StartDate="1 Jan 2000">
+      <Output TaskParameter="Major" PropertyName="MajorVersion" />
+      <Output TaskParameter="Minor" PropertyName="MinorVersion" />
+      <Output TaskParameter="Build" PropertyName="BuildVersion" />
+      <Output TaskParameter="Revision" PropertyName="RevisionVersion" />
+    </Version>
+<Message Text="##teamcity[buildNumber '$(MajorVersion).$(MinorVersion).$(BuildVersion).$(BUILD_NUMBER)']" />
+</Target>
+ 
+</Project>
