@@ -1,1 +1,42 @@
 
+stages:
+  - nuget_restore
+  - build
+  - test
+  - deploy
+
+before_script:
+  - set /p FULL_VERSION=<"VERSION.txt"
+  - set MAJOR_MINOR_PATCH=%FULL_VERSION:~0,-2%
+  - set BUILD_NUMBER=%BUILD_NUMBER_133%
+  - set SolutionRoot=%cd%
+  - set Version=%MAJOR_MINOR_PATCH%.%BUILD_NUMBER%
+  - for /F "tokens=1 delims=." %%a in ('echo %MAJOR_MINOR_PATCH%') do @set MAJOR=%%a
+  - for /F "tokens=1-2 delims=."  %%a in ('echo %MAJOR_MINOR_PATCH%') do @set MINOR=%%b
+  - set MAJOR_MINOR=%MAJOR%.%MINOR%
+
+Nuget-restore:
+  stage: nuget_restore
+  script:
+    - nuget local -clear all
+    - call deploy variable BUILD_NUMBER_133 --next
+    - nuget restore ClaimManagementSystem.sln.sln -Source "https://www.nuget.org/api/v2/"
+   #### Build ####
+Build_STIC:
+  stage: build
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - 'IF [%CI_BUILD_REF_NAME%] == [Test_133] MSBuild.SonarQube.Runner.exe begin /k:"CMS" /n:"CMS" /v:"%VERSION%" /d:sonar.cs.dotcover.reportsPaths="DotCover\Result.html" /d:sonar.cs.nunit.reportsPaths="Nunit\Result.xml"'    
+    - '"C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe" Build/TCBuild.proj /t:Compile /p:TargetFrameworkVersion=v4.0,Configuration=Debug,PlatformTarget=x86'
+
+
+#### Deploy to Artifactory####
+Deploy_STIC:
+  stage: deploy
+  variables:
+    GIT_STRATEGY: none
+  script:
+    - '"C:\Program Files (x86)\MSBuild\14.0\Bin\msbuild.exe" Build/TCBuild.proj /p:PlatformTarget=x86' 
+    - 7z.exe a -tzip cms_release_%Version%.zip -w %SolutionRoot%\DesktopBuildDrop\%Version%\CMS\Release\*
+    - call deploy artifacts *.zip --repo=CMS --path=%MAJOR_MINOR%/%VERSION%/
