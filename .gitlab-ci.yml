@@ -6,7 +6,7 @@ stages:
   - deploy
 
 before_script:
-  - set /p FULL_VERSION=<"VERSION.txt"
+  - set /p FULL_VERSION=<"VERSION.TXT"
   - set MAJOR_MINOR_PATCH=%FULL_VERSION:~0,-2%
   - set BUILD_NUMBER=%BUILD_NUMBER_133%
   - set SolutionRoot=%cd%
